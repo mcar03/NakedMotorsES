@@ -1,0 +1,5 @@
+package modelos;
+
+public enum TipoMoto {
+    DEPORTIVA,NAKED,CRUISER,SCOOTER,TRAIL,CUSTOM,ENDURO,TOURING
+}

@@ -4,11 +4,13 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import modelos.TrajeMoto;
 import repositorios.RepoTrajeMoto;
 import servicios.TrajeMotoService;
 
+@Service
 public class TrajeMotoServiceImp implements TrajeMotoService {
 
     @Autowired

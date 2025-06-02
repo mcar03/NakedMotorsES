@@ -15,9 +15,7 @@ import lombok.NoArgsConstructor;
 @Entity
 @Data
 @NoArgsConstructor
-@Table(name = "usuario")
 public class Usuario {
-    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -27,10 +25,14 @@ public class Usuario {
     private String email;
     @Column(unique = true)
     private String username;
-    private String telefono;
     private String password;
     private boolean enabled;
-     @OneToMany(mappedBy = "usuario")
+    
+    @OneToMany(mappedBy = "usuario")
+    private List<Direccion> direcciones;
+    @OneToMany(mappedBy = "usuario")
+    private List<Telefono> telefonos;
+    @OneToMany(mappedBy = "usuario")
     private List<RolUsuario> roles;
 
 }

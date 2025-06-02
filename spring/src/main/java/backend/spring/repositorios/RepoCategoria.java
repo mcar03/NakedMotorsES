@@ -7,7 +7,8 @@ import org.springframework.stereotype.Repository;
 
 import backend.spring.modelos.Categoria;
 
-
+@Repository
 public interface RepoCategoria extends JpaRepository<Categoria, Long> {
-        List<Categoria> findByCategoriaPadre(Categoria categoriaPadre);
+    //@Query("SELECT c FROM Categoria c WHERE c.padre = :padre")
+    List<Categoria> findByPadre(Categoria padre);
 }

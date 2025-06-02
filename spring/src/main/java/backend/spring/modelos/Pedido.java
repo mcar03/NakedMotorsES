@@ -15,25 +15,29 @@ import jakarta.persistence.Table;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+
 @Entity
 @Data
 @NoArgsConstructor
-@Table(name = "pedido")
 public class Pedido {
-    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private LocalDate fecha;
     private String observaciones;
-    private double descuento;
-    private double total;
+    private Float descuento;
+    private Float total;
     @ManyToOne
     private Usuario cliente;
     @Enumerated(EnumType.STRING)
-    private EstadoPedido estadoPedido;
+    private Estado estado;
     @OneToMany(mappedBy = "pedido")
     private List<LineaPedido> lineaPedidos;
     @ManyToOne
     private Usuario operario;
+    @ManyToOne
+    private Direccion direccion;
+    @ManyToOne
+    private Telefono telefono;
 }
+

@@ -9,18 +9,18 @@ import jakarta.persistence.Table;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+
 @Entity
 @Data
 @NoArgsConstructor
-@Table(name = "lineapedido")
 public class LineaPedido {
-  
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-    private double precio;
+    private Float precio;
     private Integer cantidad;
+    @ManyToOne
+    private Producto producto;
     @ManyToOne
     private Pedido pedido;
 }

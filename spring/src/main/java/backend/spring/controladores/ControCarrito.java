@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 import backend.spring.excepciones.CarroException;
 import backend.spring.modelos.Estado;
@@ -34,7 +35,7 @@ import backend.spring.repositorios.RepoTelefono;
 import backend.spring.repositorios.RepoUsuario;
 
 
-@Controller
+@RestController
 public class ControCarrito {
     
     @Autowired

@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 import backend.spring.modelos.Estado;
 import backend.spring.modelos.Pedido;
@@ -25,7 +26,7 @@ import backend.spring.repositorios.RepoUsuario;
 
 
 
-@Controller
+@RestController
 @RequestMapping("/pedidos")
 public class ControPedidos {
     

@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import backend.spring.modelos.Direccion;
 import backend.spring.modelos.Telefono;
@@ -28,7 +29,7 @@ import backend.spring.repositorios.RepoUsuario;
 /**
  * Esta clase implementa el servicio de carro de la compra
  */
-@Controller
+@RestController
 @RequestMapping("/mis-datos")
 public class ControUsuario {
         

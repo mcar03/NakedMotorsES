@@ -1,5 +1,11 @@
 package backend.spring.controladores;
 
+import java.time.LocalDateTime;
+import java.util.HashMap;
+import java.util.Map;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.servlet.ModelAndView;
@@ -13,15 +19,20 @@ import backend.spring.excepciones.CarroException;
  * tenemos en el carrito de la compra más productos de los que hay en stock.
  */
 
-@ControllerAdvice // Esto hace que el controlador maneje excepciones globales
-public class GlobalExceptionHandler {
-
-    @ExceptionHandler(CarroException.class) // Manejar cualquier excepción
-    public ModelAndView handleException(CarroException ex) {
-        ModelAndView modelAndView = new ModelAndView("error"); // Vista de error
-        modelAndView.addObject("titulo", "Error al procesar su carrito");
-        modelAndView.addObject("mensaje", ex.getMessage()); // Puedes usar getMessage() para obtener el mensaje de la excepción
-        return modelAndView;
-    }
-    
-}
+ @ControllerAdvice
+ public class GlobalExceptionHandler {
+ 
+     @ExceptionHandler(CarroException.class)
+     public ResponseEntity<Map<String, Object>> handleException(CarroException ex) {
+         Map<String, Object> errorBody = new HashMap<>();
+         errorBody.put("titulo", "Error al procesar su carrito");
+         errorBody.put("mensaje", ex.getMessage());
+         errorBody.put("timestamp", LocalDateTime.now());
+         errorBody.put("status", HttpStatus.BAD_REQUEST.value());
+ 
+         return new ResponseEntity<>(errorBody, HttpStatus.BAD_REQUEST);
+     }
+ 
+     // Puedes agregar más handlers de excepción si quieres...
+ }
+ 

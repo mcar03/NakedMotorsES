@@ -1,49 +1,40 @@
 <nz-layout>
-    <nz-header>
-      <div class="logo"></div>
+  <nz-header class="header">
+    <div class="logo"></div>
+    <div class="menu-container">
       <ul nz-menu nzTheme="dark" nzMode="horizontal" class="header-menu">
-        <li nz-menu-item nzSelected>nav 1</li>
-        <li nz-menu-item>nav 2</li>
-        <li nz-menu-item>nav 3</li>
+        <li nz-menu-item nzSelected>
+          <i class="pi pi-shopping-cart"></i>Carrito
+        </li>
+        <li nz-menu-item>Iniciar Sesión</li>
       </ul>
-    </nz-header>
-    <nz-layout>
-      <nz-sider nzWidth="200px" nzTheme="light">
-        <ul nz-menu nzMode="inline" class="sider-menu">
-          <li nz-submenu nzOpen nzIcon="user" nzTheme="outline" nzTitle="subnav 1"> 
-            <!-- <nz-icon nzType="user" nzTheme="outline" /> -->
-            <ul>
-              <li nz-menu-item nzSelected>option1</li>
-              <li nz-menu-item>option2</li>
-              <li nz-menu-item>option3</li>
-              <li nz-menu-item>option4</li>
-            </ul>
-          </li>
-          <li nz-submenu nzTitle="subnav 2" nzTheme="outline" nzIcon="laptop">
-            <ul>
-              <li nz-menu-item>option5</li>
-              <li nz-menu-item>option6</li>
-              <li nz-menu-item>option7</li>
-              <li nz-menu-item>option8</li>
-            </ul>
-          </li>
-          <li nz-submenu nzTitle="subnav 3" nzTheme="outline" nzIcon="notification">
-            <ul>
-              <li nz-menu-item>option9</li>
-              <li nz-menu-item>option10</li>
-              <li nz-menu-item>option11</li>
-              <li nz-menu-item>option12</li>
-            </ul>
-          </li>
-        </ul>
-      </nz-sider>
-      <nz-layout class="inner-layout">
-        <nz-breadcrumb>
-          <nz-breadcrumb-item>Home</nz-breadcrumb-item>
-          <nz-breadcrumb-item>List</nz-breadcrumb-item>
-          <nz-breadcrumb-item>App</nz-breadcrumb-item>
-        </nz-breadcrumb>
-        <nz-content>Content</nz-content>
-      </nz-layout>
+    </div>
+  </nz-header>
+
+  <nz-layout>
+    <nz-sider nzWidth="200px" nzTheme="light">
+      <ul nz-menu nzMode="inline" class="sider-menu">
+        <li nz-submenu nzOpen nzIcon="user" nzTheme="outline" nzTitle="Categorías">
+          <ul>
+            <li nz-menu-item nzSelected>Motos</li>
+            <li nz-menu-item>Guantes</li>
+            <li nz-menu-item>Cascos</li>
+            <li nz-menu-item>Ruedas</li>
+            <li nz-menu-item>Escapes</li>
+            <li nz-menu-item>Botas</li>
+            <li nz-menu-item>Trajes Motociclismo</li>
+          </ul>
+        </li>
+      </ul>
+    </nz-sider>
+
+    <nz-layout class="inner-layout">
+      <nz-breadcrumb>
+        <nz-breadcrumb-item>Home</nz-breadcrumb-item>
+        <nz-breadcrumb-item>List</nz-breadcrumb-item>
+        <nz-breadcrumb-item>App</nz-breadcrumb-item>
+      </nz-breadcrumb>
+      <nz-content>Content</nz-content>
     </nz-layout>
   </nz-layout>
+</nz-layout>

@@ -44,7 +44,7 @@ public class SecurityConfiguration {
                         .authorizeHttpRequests((requests) -> requests
                                 .requestMatchers("/webjars/**", "/img/**", "/js/**", 
                                         "/register/**", "/ayuda/**", "/login", "/codpos/**", 
-                                        "/denegado", "/error", "/acerca")
+                                        "/denegado", "/error", "/acerca", "/categoria", "/productos")
                                 .permitAll() 
                                 .requestMatchers("/admin/**", "/admin/*/**" , "/admin/*/*/**", "/admin/*/*/*/*/*/**")
                                 //.authenticated()

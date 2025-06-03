@@ -1,6 +1,9 @@
-<nz-carousel nzAutoPlay>
+
+<div class="carrousel-container">
+  
+  <nz-carousel nzAutoPlay>
     <div nz-carousel-content *ngFor="let item of array; let i = index">
-      <h3>{{ item }}</h3>
+      <img class="imagen-banner" [src]="item" alt="Banner {{ i + 1 }}" />
     </div>
   </nz-carousel>
-  
+</div>

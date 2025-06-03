@@ -18,6 +18,18 @@ import { CarrouselComponent } from './components/homePageComponents/carrousel/ca
 
 import { NzCarouselModule } from 'ng-zorro-antd/carousel';
 import { LoginPageComponent } from './login-page/login-page.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { SobreNosotrosComponent } from './pages/sobre-nosotros/sobre-nosotros.component';
+import { PoliticaPrivacidadPageComponent } from './pages/politica-privacidad-page/politica-privacidad-page.component';
+import { ListadoProductosGeneralComponent } from './components/homePageComponents/listado-productos-general/listado-productos-general.component';
+import { MotosPageComponent } from './pages/motos-page/motos-page.component';
+import { GuantesPageComponent } from './pages/guantes-page/guantes-page.component';
+import { CascosPageComponent } from './pages/cascos-page/cascos-page.component';
+import { RuedasPageComponent } from './pages/ruedas-page/ruedas-page.component';
+import { EscapesPageComponent } from './pages/escapes-page/escapes-page.component';
+import { BotasPageComponent } from './pages/botas-page/botas-page.component';
+import { TrajesMotoPageComponent } from './pages/trajes-moto-page/trajes-moto-page.component';
+import { RegisterPageComponent } from './pages/register-page/register-page.component';
 
 
 
@@ -29,7 +41,20 @@ import { LoginPageComponent } from './login-page/login-page.component';
     // SideBarComponent,
     ToolbarComponent,
     CarrouselComponent,
-    LoginPageComponent
+    LoginPageComponent,
+    FooterComponent,
+    SobreNosotrosComponent,
+    PoliticaPrivacidadPageComponent,
+    ListadoProductosGeneralComponent,
+    MotosPageComponent,
+    GuantesPageComponent,
+    CascosPageComponent,
+    RuedasPageComponent,
+    EscapesPageComponent,
+    BotasPageComponent,
+    TrajesMotoPageComponent,
+    RegisterPageComponent,
+    
   ],
   imports: [
     BrowserModule,

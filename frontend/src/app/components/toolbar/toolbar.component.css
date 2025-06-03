@@ -26,6 +26,14 @@
   
 }
 
+.btn-redes-sociales:hover {
+  filter: brightness(1.2); 
+  border-color: #ff4081;   
+  cursor: pointer;         
+  transform: scale(1.05);  
+  transition: all 0.3s ease;
+}
+
 .instagram{
   background-image: url("/assets/img/insta.png");
   background-size: 100%;

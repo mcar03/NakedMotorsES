@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
 })
 export class CarrouselComponent {
 
-  array = [1, 2, 3, 4];
+  array = ["assets/img/banner1-cross.jpg", "assets/img/banner2-cross.jpg","assets/img/banner3-racer.jpg","assets/img/banner4-cross.jpg"];
 }

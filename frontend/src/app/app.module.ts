@@ -13,9 +13,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NzIconModule, NZ_ICONS  } from 'ng-zorro-antd/icon';
 import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
 import { UserOutline } from '@ant-design/icons-angular/icons';
+import { CarrouselComponent } from './components/homePageComponents/carrousel/carrousel.component';
 
 
-
+import { NzCarouselModule } from 'ng-zorro-antd/carousel';
+import { LoginPageComponent } from './login-page/login-page.component';
 
 
 
@@ -25,7 +27,9 @@ import { UserOutline } from '@ant-design/icons-angular/icons';
     AppComponent,
     HomePageComponent,
     // SideBarComponent,
-    ToolbarComponent
+    ToolbarComponent,
+    CarrouselComponent,
+    LoginPageComponent
   ],
   imports: [
     BrowserModule,
@@ -33,6 +37,7 @@ import { UserOutline } from '@ant-design/icons-angular/icons';
     BrowserAnimationsModule,
     NzLayoutModule,
     NzIconModule,
+    NzCarouselModule,
     NzDropDownModule,
     NzBreadCrumbModule,
     AppRoutingModule

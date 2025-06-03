@@ -1,12 +1,19 @@
 <nz-layout>
   <nz-header class="header">
-    <div class="logo"></div>
+    <div class="llamada">Llamanos: <span class="numero-tlfn">612345678</span></div>
     <div class="menu-container">
       <ul nz-menu nzTheme="dark" nzMode="horizontal" class="header-menu">
         <li nz-menu-item nzSelected>
           <i class="pi pi-shopping-cart"></i>Carrito
         </li>
         <li nz-menu-item>Iniciar Sesión</li>
+
+        <li>
+          <button class="btn-redes-sociales instagram"></button>
+          <button class="btn-redes-sociales facebook"></button>
+          <button class="btn-redes-sociales twitter"></button>
+
+        </li>
       </ul>
     </div>
   </nz-header>
@@ -14,9 +21,10 @@
   <nz-layout>
     <nz-sider nzWidth="200px" nzTheme="light">
       <ul nz-menu nzMode="inline" class="sider-menu">
-        <li nz-submenu nzOpen nzIcon="user" nzTheme="outline" nzTitle="Categorías">
+        <li nz-submenu nzOpen nzIcon="pi-arrows-v" nzTheme="outline" nzTitle="Categorías">
           <ul>
-            <li nz-menu-item nzSelected>Motos</li>
+            <li nz-menu-item nzSelected>Nuestros productos</li>
+            <li nz-menu-item>Motos</li>
             <li nz-menu-item>Guantes</li>
             <li nz-menu-item>Cascos</li>
             <li nz-menu-item>Ruedas</li>
@@ -27,14 +35,14 @@
         </li>
       </ul>
     </nz-sider>
+    
 
     <nz-layout class="inner-layout">
       <nz-breadcrumb>
-        <nz-breadcrumb-item>Home</nz-breadcrumb-item>
-        <nz-breadcrumb-item>List</nz-breadcrumb-item>
-        <nz-breadcrumb-item>App</nz-breadcrumb-item>
+        <!--<nz-breadcrumb-item>Motos</nz-breadcrumb-item>-->
+        
       </nz-breadcrumb>
-      <nz-content>Content</nz-content>
+      <nz-content> <app-home-page></app-home-page></nz-content>
     </nz-layout>
   </nz-layout>
 </nz-layout>

@@ -11,6 +11,51 @@
   background: rgba(255, 255, 255, 0.2);
 }
 
+.numero-tlfn{
+  color: red;
+}
+.btn-redes-sociales {
+  
+  border-radius: 80px;
+  margin: 4px;
+  width: 50px;
+  height: 50px;
+  margin-top: 25px;
+  margin-left: 10px;
+  border: 2px solid rgb(29, 5, 95);
+  
+}
+
+.instagram{
+  background-image: url("/assets/img/insta.png");
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.facebook{
+  background-image: url("/assets/img/facebook.png");
+  background-size: 115%; 
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.twitter{
+  background-image: url("/assets/img/twitter.png");
+  background-size: 100%; 
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.llamada{
+  color: white;
+  font-size: 23px;
+}
+
+img{
+  width: 120px;
+  height: 31px;
+}
+
 .menu-container {
   display: flex;
   align-items: center;

@@ -2,7 +2,7 @@
 
 ## ¿Qué es NakedMotorsEs?❓❗
 NakedMotorsEs puede parecer que se trate de una tienda online para unicamente el motociclismo Naked...
-Pero me alegro anunciarle que no es así!! tenemos una gran disponiblidad en nuestra tienda con el objetivo de venderte las mejores motos al mejor calidad-precio.
+Pero me alegro anunciarle que no es así!! tenemos una gran disponiblidad en nuestra tienda con el objetivo de venderte las mejores motos o componentes al mejor calidad-precio.
 
 ## ¿Por qué escogería NakedMotorsES? ✅
 
@@ -24,13 +24,14 @@ Los productos completos en nuestra tienda nos referimos a como su propio nombre 
 Un objeto parcial puede indicarse como un complemento o componente de un objeto completo:
 
 - Tubo de escapes
--  Árbol de levas
--  Ruedas
+- Árbol de levas
+- Ruedas
 - ...
 
 ## ¿Cuál es la finalidad de nuestra empresa?
 
 La finalidad de NakedMotorsES será y siempre será como prioridad la satisfacción de un cliente con su compra...
+
 ### **¿Quién no ha comprado algo barato pensando que haría el "apaño" y al final le ha tocado gastarse más de preevisto?** 
 
 Pues bien, como objetivo principal como ya mencioné antes es la satisfacción de nuestro clientes. Queremos que todos los que le den una oportunidad a nuestra empresa se den cuenta que de verdad trabajamos enserio y hacemos todo lo posible por la satisfacción y lealtad de nuestros clientes.

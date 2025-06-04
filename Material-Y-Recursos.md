@@ -21,7 +21,7 @@ Para Windows necesitamos el software de DockerDesktop (la versión es indiferent
 Una vez hecho esto arrancamos nuestro archivo.yml con: 
 
 ```cmd
-docker-compose docker-compose.yml up --build
+docker-compose -f docker-compose.yml up --build
 ```
 
 ### Frontend

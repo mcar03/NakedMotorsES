@@ -31,6 +31,7 @@ import { RegisterPageComponent } from './pages/register-page/register-page.compo
 import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { CarritoPageComponent } from './pages/carrito-page/carrito-page.component';
 import { SobreNosotrosPageComponent } from './pages/sobre-nosotros-page/sobre-nosotros-page.component';
+import { ListadoProductosMotosComponent } from './components/motosPageComponents/listado-productos-motos/listado-productos-motos.component';
 
 
 
@@ -56,6 +57,8 @@ import { SobreNosotrosPageComponent } from './pages/sobre-nosotros-page/sobre-no
     LoginPageComponent,
     CarritoPageComponent,
     SobreNosotrosPageComponent,
+    ListadoProductosMotosComponent,
+    
     
     
   ],

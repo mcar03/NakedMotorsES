@@ -1,0 +1,31 @@
+
+<div class="title">
+    <h1 class="h2-title">Productos</h1>
+    <p>Te ofrecemos un poco de todo porque sabemos que siempre surgen nuevas ideas</p>
+</div>
+
+<div class="productos-grid">
+  <div class="producto-card" *ngFor="let producto of productosPaginados; let i = index">
+    <img [src]="producto.imagen" [alt]="producto.nombre" />
+    <h3>{{ producto.nombre }}</h3>
+    <p class="precio">{{ producto.precio | currency:'EUR' }}</p>
+
+    <div class="botones-producto">
+      <button class="btn-comprar">Añadir al carrito</button>
+      <button class="btn-like" [class.liked]="producto.liked" (click)="toggleLike(producto)">
+        
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Paginación -->
+<div class="paginacion">
+  <button
+    *ngFor="let p of [].constructor(totalPaginas); let i = index"
+    [class.activo]="paginaActual === i + 1"
+    (click)="cambiarPagina(i + 1)"
+  >
+    {{ i + 1 }}
+  </button>
+</div>

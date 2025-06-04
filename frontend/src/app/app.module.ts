@@ -32,6 +32,15 @@ import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { CarritoPageComponent } from './pages/carrito-page/carrito-page.component';
 import { SobreNosotrosPageComponent } from './pages/sobre-nosotros-page/sobre-nosotros-page.component';
 import { ListadoProductosMotosComponent } from './components/motosPageComponents/listado-productos-motos/listado-productos-motos.component';
+import { EntradaImagenMotosComponentComponent } from './components/motosPageComponents/entrada-imagen-motos-component/entrada-imagen-motos-component.component';
+import { EntradaImagenGuantesComponentComponent } from './components/guantesPageComponents/entrada-imagen-guantes-component/entrada-imagen-guantes-component.component';
+import { EntradaImagenCascosComponentComponent } from './components/cascosPageComponents/entrada-imagen-cascos-component/entrada-imagen-cascos-component.component';
+import { EntradaImagenRuedasComponentComponent } from './components/ruedasPageComponents/entrada-imagen-ruedas-component/entrada-imagen-ruedas-component.component';
+import { EntradaImagenEscapesComponentComponent } from './components/escapesPageComponents/entrada-imagen-escapes-component/entrada-imagen-escapes-component.component';
+import { EntradaImagenBotasComponentComponent } from './components/botasPageComponents/entrada-imagen-botas-component/entrada-imagen-botas-component.component';
+import { EntradaImagenTrajeMotoComponentComponent } from './components/trajesMotoPageComponents/entrada-imagen-traje-moto-component/entrada-imagen-traje-moto-component.component';
+import { ListadoBotasComponent } from './components/botasPageComponents/listado-botas/listado-botas.component';
+import { PoliticaPrivacidadComponentComponent } from './components/politica-privacidad-component/politica-privacidad-component.component';
 
 
 
@@ -58,6 +67,15 @@ import { ListadoProductosMotosComponent } from './components/motosPageComponents
     CarritoPageComponent,
     SobreNosotrosPageComponent,
     ListadoProductosMotosComponent,
+    EntradaImagenMotosComponentComponent,
+    EntradaImagenGuantesComponentComponent,
+    EntradaImagenCascosComponentComponent,
+    EntradaImagenRuedasComponentComponent,
+    EntradaImagenEscapesComponentComponent,
+    EntradaImagenBotasComponentComponent,
+    EntradaImagenTrajeMotoComponentComponent,
+    ListadoBotasComponent,
+    PoliticaPrivacidadComponentComponent,
     
     
     

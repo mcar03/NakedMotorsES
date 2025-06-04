@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { NavigationEnd, Router } from '@angular/router';
+import { filter } from 'rxjs';
 
 @Component({
   selector: 'app-login-page',
@@ -7,4 +9,11 @@ import { Component } from '@angular/core';
 })
 export class LoginPageComponent {
 
+  username: string = '';
+  password: string = '';
+
+  onLogin() {
+    console.log('Usuario:', this.username);
+    console.log('Contraseña:', this.password);
+  }
 }

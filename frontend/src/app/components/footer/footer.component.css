@@ -1,5 +1,5 @@
 .footer {
-  background-color: #534b4b;
+  background-color: #555353;
   color: #fff;
   padding: 40px 20px 20px;
   font-size: 14px;
@@ -17,6 +17,8 @@
   flex: 1 1 250px;
   margin: 10px;
 }
+
+
 
 .footer-section h3 {
   font-size: 16px;

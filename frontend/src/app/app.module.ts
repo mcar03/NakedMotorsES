@@ -14,12 +14,10 @@ import { NzIconModule, NZ_ICONS  } from 'ng-zorro-antd/icon';
 import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
 import { UserOutline } from '@ant-design/icons-angular/icons';
 import { CarrouselComponent } from './components/homePageComponents/carrousel/carrousel.component';
-
+import { FormsModule } from '@angular/forms';
 
 import { NzCarouselModule } from 'ng-zorro-antd/carousel';
-import { LoginPageComponent } from './login-page/login-page.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { SobreNosotrosComponent } from './pages/sobre-nosotros/sobre-nosotros.component';
 import { PoliticaPrivacidadPageComponent } from './pages/politica-privacidad-page/politica-privacidad-page.component';
 import { ListadoProductosGeneralComponent } from './components/homePageComponents/listado-productos-general/listado-productos-general.component';
 import { MotosPageComponent } from './pages/motos-page/motos-page.component';
@@ -30,6 +28,9 @@ import { EscapesPageComponent } from './pages/escapes-page/escapes-page.componen
 import { BotasPageComponent } from './pages/botas-page/botas-page.component';
 import { TrajesMotoPageComponent } from './pages/trajes-moto-page/trajes-moto-page.component';
 import { RegisterPageComponent } from './pages/register-page/register-page.component';
+import { LoginPageComponent } from './pages/login-page/login-page.component';
+import { CarritoPageComponent } from './pages/carrito-page/carrito-page.component';
+import { SobreNosotrosPageComponent } from './pages/sobre-nosotros-page/sobre-nosotros-page.component';
 
 
 
@@ -41,9 +42,7 @@ import { RegisterPageComponent } from './pages/register-page/register-page.compo
     // SideBarComponent,
     ToolbarComponent,
     CarrouselComponent,
-    LoginPageComponent,
     FooterComponent,
-    SobreNosotrosComponent,
     PoliticaPrivacidadPageComponent,
     ListadoProductosGeneralComponent,
     MotosPageComponent,
@@ -54,6 +53,10 @@ import { RegisterPageComponent } from './pages/register-page/register-page.compo
     BotasPageComponent,
     TrajesMotoPageComponent,
     RegisterPageComponent,
+    LoginPageComponent,
+    CarritoPageComponent,
+    SobreNosotrosPageComponent,
+    
     
   ],
   imports: [
@@ -62,6 +65,7 @@ import { RegisterPageComponent } from './pages/register-page/register-page.compo
     BrowserAnimationsModule,
     NzLayoutModule,
     NzIconModule,
+    FormsModule,
     NzCarouselModule,
     NzDropDownModule,
     NzBreadCrumbModule,

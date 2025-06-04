@@ -1,1 +1,81 @@
-<p>register-page works!</p>
+<div class="register-container">
+    <h2>Crear Cuenta</h2>
+  
+    <form #registerForm="ngForm" (ngSubmit)="onRegister()">
+      <label for="firstName">Nombre</label>
+      <input
+        type="text"
+        id="firstName"
+        name="firstName"
+        required
+        [(ngModel)]="firstName"
+        #firstNameInput="ngModel"
+      />
+      <div *ngIf="firstNameInput.invalid && firstNameInput.touched" class="error">
+        El nombre es obligatorio.
+      </div>
+  
+      <label for="lastName">Apellido</label>
+      <input
+        type="text"
+        id="lastName"
+        name="lastName"
+        required
+        [(ngModel)]="lastName"
+        #lastNameInput="ngModel"
+      />
+      <div *ngIf="lastNameInput.invalid && lastNameInput.touched" class="error">
+        El apellido es obligatorio.
+      </div>
+  
+      <label for="email">Email</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        required
+        email
+        [(ngModel)]="email"
+        #emailInput="ngModel"
+      />
+      <div *ngIf="emailInput.invalid && emailInput.touched" class="error">
+        Introduce un email válido.
+      </div>
+  
+      <label for="username">Usuario</label>
+      <input
+        type="text"
+        id="username"
+        name="username"
+        required
+        minlength="4"
+        [(ngModel)]="username"
+        #usernameInput="ngModel"
+      />
+      <div *ngIf="usernameInput.invalid && usernameInput.touched" class="error">
+        El usuario debe tener al menos 4 caracteres.
+      </div>
+  
+      <label for="password">Contraseña</label>
+      <input
+        type="password"
+        id="password"
+        name="password"
+        required
+        minlength="6"
+        [(ngModel)]="password"
+        #passwordInput="ngModel"
+      />
+      <div *ngIf="passwordInput.invalid && passwordInput.touched" class="error">
+        La contraseña debe tener al menos 6 caracteres.
+      </div>
+  
+      <button type="submit" [disabled]="!registerForm.valid">Registrarse</button>
+    </form>
+  
+    <p class="login-text">
+      ¿Ya tienes cuenta?
+      <a routerLink="/login">Iniciar sesión</a>
+    </p>
+  </div>
+  

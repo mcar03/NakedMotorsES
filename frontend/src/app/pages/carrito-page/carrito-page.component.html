@@ -1,1 +1,27 @@
-<p>carrito-page works!</p>
+<div class="carrito-container">
+    <h2>Carrito de la Compra</h2>
+  
+    <div *ngIf="productos.length === 0">
+      <p>Tu carrito está vacío.</p>
+    </div>
+  
+    <div *ngIf="productos.length > 0" class="productos-lista">
+      <div *ngFor="let producto of productos; let i = index" class="producto-item">
+        <img [src]="producto.imagen" [alt]="producto.nombre" />
+        <div class="info">
+          <h4>{{ producto.nombre }}</h4>
+          <p>Precio: {{ producto.precio }} €</p>
+          <p>Cantidad: {{ producto.cantidad }}</p>
+          <p>Subtotal: {{ producto.precio * producto.cantidad }} €</p>
+          <button (click)="eliminarProducto(i)">Eliminar</button>
+        </div>
+      </div>
+  
+      <div class="resumen">
+        <h3>Total: {{ total }} €</h3>
+        <button (click)="vaciarCarrito()">Vaciar Carrito</button>
+        <button class="btn-comprar">Proceder al Pago</button>
+      </div>
+    </div>
+  </div>
+  

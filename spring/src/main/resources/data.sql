@@ -9,77 +9,77 @@ INSERT INTO categoria (nombre, descripcion, padre_id) VALUES ('Botas', 'Calzados
 
 INSERT INTO producto (nombre, descripcion, precio, talla, categoria_id, stock, imagenurl) VALUES 
 ('Alpinestars GP Force Phantom', 'Mono de piel integral con protecciones Nucleon Flex Pro.', 799.99, 'L', 1, 5, 'https://www.fowlers.co.uk/shop/content/images/thumbs/0020294_alpinestars-gp-force-phantom-1pc-suit.jpeg'),
-('Dainese Laguna Seca 5', 'Mono de cuero perforado, ideal para circuito y calle.', 899.99, 'M', 1, 5, 'https://example.com/monos/dainese_laguna_seca_5.jpg'),
-('Rev’It! Spitfire One Piece', 'Mono de una pieza con paneles elásticos y sliders.', 749.99, 'XL', 1, 4, 'https://example.com/monos/revit_spitfire_one_piece.jpg'),
-('RST Tractech Evo 4', 'Mono de cuero con protecciones certificadas CE.', 699.99, 'L', 1, 6, 'https://example.com/monos/rst_tractech_evo_4.jpg'),
-('IXON Vortex 2', 'Mono deportivo de una pieza, con joroba aerodinámica.', 649.99, 'M', 1, 6, 'https://example.com/monos/ixon_vortex_2.jpg'),
-('Furygan Full Ride', 'Mono con piel de vaca, preparado para uso en pista.', 679.00, 'S', 1, 4, 'https://example.com/monos/furygan_full_ride.jpg'),
-('Berik GP-X', 'Mono racing de 1 pieza con protecciones en hombros y codos.', 599.90, 'L', 1, 6, 'https://example.com/monos/berik_gpx.jpg'),
-('Dainese Avro 4', 'Mono de cuero con insertos elásticos y forro Nanofeel.', 899.99, 'M', 1, 4, 'https://example.com/monos/dainese_avro_4.jpg'),
-('Alpinestars Motegi V3', 'Mono homologado CE con inserciones flexibles.', 729.99, 'XL', 1, 3, 'https://example.com/monos/alpinestars_motegi_v3.jpg'),
-('Rev’It! Argon 2', 'Mono deportivo ventilado con costuras de triple refuerzo.', 819.00, 'L', 1, 5, 'https://example.com/monos/revit_argon_2.jpg');
+('Dainese Laguna Seca 5', 'Mono de cuero perforado, ideal para circuito y calle.', 899.99, 'M', 1, 5, 'https://m.media-amazon.com/images/I/51C5BwD-UbL._AC_SL1000_.jpg'),
+('Rev’It! Spitfire One Piece', 'Mono de una pieza con paneles elásticos y sliders.', 749.99, 'XL', 1, 4, 'https://images.rockymountainatvmc.com/images/prod/1001/r/rev_17_spi_one_pie_lea_sui-whi_red.jpg'),
+('RST Tractech Evo 4', 'Mono de cuero con protecciones certificadas CE.', 699.99, 'L', 1, 6, 'https://www.madmotos.es/wp-content/uploads/2023/02/8001973002-1-800Wx800H.jpeg'),
+('IXON Vortex 2', 'Mono deportivo de una pieza, con joroba aerodinámica.', 649.99, 'M', 1, 6, 'https://www.icasque.es/images/equipement-moto/combinaison-moto-cuir/vortex-2-blanc-noir-s120.jpg'),
+('Furygan Full Ride', 'Mono con piel de vaca, preparado para uso en pista.', 679.00, 'S', 1, 4, 'https://media.motoblouz.com/images/catalogue/00p-6540-122.jpg'),
+('Berik GP-X', 'Mono racing de 1 pieza con protecciones en hombros y codos.', 599.90, 'L', 1, 6, 'https://www.fc-moto.de/WebRoot/FCMotoDB/Shops/10207048/665D/646B/C78E/591C/C7DA/AC1E/140E/14C7/LS1-171334-BK-127_1.jpg'),
+('Dainese Avro 4', 'Mono de cuero con insertos elásticos y forro Nanofeel.', 899.99, 'M', 1, 4, 'https://motopasionstore.com/128545-large_default/dainese-avro-4-2pcs-negro-antracita-rojo-lava.jpg'),
+('Alpinestars Motegi V3', 'Mono homologado CE con inserciones flexibles.', 729.99, 'XL', 1, 3, 'https://www.fc-moto.de/WebRoot/FCMotoDB/Shops/10207048/5D64/CBAA/0DD2/4586/D66D/AC1E/1404/E78B/Large-3161020-1538-fr_motegi-v3-2pc-leather-suit.jpg'),
+('Rev’It! Argon 2', 'Mono deportivo ventilado con costuras de triple refuerzo.', 819.00, 'L', 1, 5, 'https://www.icasque.es/images/equipement-moto/combinaison-moto-cuir/combinaison-cuir-revit-argon-2-noir-neon-rouge-s120.jpg');
 
 INSERT INTO producto (nombre, descripcion, precio, talla, categoria_id, stock, imagenurl) VALUES 
-('Alpinestars SP-8 V3', 'Guantes cortos de piel con protección en nudillos.', 89.99, 'M', 2, 10, 'https://example.com/guantes/alpinestars_sp8_v3.jpg'),
-('Dainese Carbon 3 Long', 'Guantes largos con refuerzos en carbono y piel.', 129.99, 'L', 2, 8, 'https://example.com/guantes/dainese_carbon_3_long.jpg'),
-('Rev’It! Sand 4', 'Guantes de verano ventilados con protección en dedos.', 69.99, 'M', 2, 12, 'https://example.com/guantes/revit_sand_4.jpg'),
-('RST Tractech Evo 3', 'Guantes de piel con sliders y protección reforzada.', 109.99, 'XL', 2, 6, 'https://example.com/guantes/rst_tractech_evo_3.jpg'),
-('IXON Pro Track', 'Guantes racing con protecciones rígidas y piel de calidad.', 119.99, 'L', 2, 7, 'https://example.com/guantes/ixon_pro_track.jpg'),
-('Furygan Impact', 'Guantes deportivos con forro impermeable y refuerzos.', 89.90, 'M', 2, 9, 'https://example.com/guantes/furygan_impact.jpg'),
-('Berik Flash', 'Guantes cortos para verano con ventilación y protección.', 59.90, 'S', 2, 10, 'https://example.com/guantes/berik_flash.jpg'),
-('Dainese Full Metal 6', 'Guantes racing con carbono y Kevlar.', 159.99, 'M', 2, 5, 'https://example.com/guantes/dainese_full_metal_6.jpg'),
-('Alpinestars GP Pro', 'Guantes de competición con múltiples protecciones.', 179.99, 'L', 2, 4, 'https://example.com/guantes/alpinestars_gp_pro.jpg'),
-('Rev’It! Cayenne 3', 'Guantes de invierno con aislamiento térmico.', 99.99, 'XL', 2, 7, 'https://example.com/guantes/revit_cayenne_3.jpg');
+('Alpinestars SP-8 V3', 'Guantes cortos de piel con protección en nudillos.', 89.99, 'M', 2, 10, 'https://www.ramirezmoto.es/admin/pictures/zoom/Guantes-Alpinestars-SP-8-V3-Negro-1.jpg'),
+('Dainese Carbon 3 Long', 'Guantes largos con refuerzos en carbono y piel.', 129.99, 'L', 2, 8, 'https://www.motobasic.es/wp-content/uploads/2020/05/8200-DAINESE-Guantes-Carbon-3-Largo-Negro.jpg'),
+('Rev’It! Sand 4', 'Guantes de verano ventilados con protección en dedos.', 69.99, 'M', 2, 12, 'https://media.motoblouz.com/images/catalogue/rev-it-sand-4-2.jpg'),
+('RST Tractech Evo 3', 'Guantes de piel con sliders y protección reforzada.', 109.99, 'XL', 2, 6, 'https://motossoria.es/4781-large_default/guantes-rst-tractech-evo-4-black.jpg'),
+('IXON Pro Track', 'Guantes racing con protecciones rígidas y piel de calidad.', 119.99, 'L', 2, 7, 'https://motosvicente.es/4913-thickbox_default/guante-ixon-pro-continental.jpg'),
+('Furygan Impact', 'Guantes deportivos con forro impermeable y refuerzos.', 89.90, 'M', 2, 9, 'https://rockymotard.com/9798-large_default/guantes-furygan-furyshort-d3o.jpg'),
+('Berik Flash', 'Guantes cortos para verano con ventilación y protección.', 59.90, 'S', 2, 10, 'https://m.media-amazon.com/images/I/61OCtWue23L._AC_SL1224_.jpg'),
+('Dainese Full Metal 6', 'Guantes racing con carbono y Kevlar.', 159.99, 'M', 2, 5, 'https://www.martimotos.com/19214-large_default/dainese-full-metal-6.jpg'),
+('Alpinestars GP Pro', 'Guantes de competición con múltiples protecciones.', 179.99, 'L', 2, 4, 'https://m.media-amazon.com/images/I/516Bj9wdZEL._AC_.jpg'),
+('Rev’It! Cayenne 3', 'Guantes de invierno con aislamiento térmico.', 99.99, 'XL', 2, 7, 'https://www.tiendamotocenter.com/36459-thickbox_default/guantes-revit-cayenne-2.jpg');
 
 INSERT INTO producto (nombre, descripcion, precio, talla, categoria_id, stock, imagenurl) VALUES 
-('Shoei NXR 2', 'Casco integral con calota de fibra AIM y excelente ventilación.', 499.99, 'M', 3, 7, 'https://example.com/cascos/shoei_nxr_2.jpg'),
-('AGV K6', 'Casco deportivo ligero con diseño aerodinámico.', 399.99, 'L', 3, 6, 'https://example.com/cascos/agv_k6.jpg'),
-('Arai Signet-X', 'Casco premium con sistema de ventilación avanzado.', 599.00, 'XL', 3, 4, 'https://example.com/cascos/arai_signet_x.jpg'),
-('HJC RPHA 11 Pro', 'Casco de fibra con pantalla antivaho y sistema rápido.', 379.99, 'M', 3, 8, 'https://example.com/cascos/hjc_rpha_11_pro.jpg'),
-('Schuberth C4 Pro', 'Casco modular con sonido mejorado y aerodinámica.', 649.99, 'L', 3, 3, 'https://example.com/cascos/schuberth_c4_pro.jpg'),
-('Bell Race Star Flex DLX', 'Casco de carreras con calota compuesta y diseño agresivo.', 699.00, 'M', 3, 5, 'https://example.com/cascos/bell_race_star_flex_dlx.jpg'),
-('Scorpion EXO-R1 Air', 'Casco deportivo con sistema AirFit para ajuste fácil.', 349.99, 'L', 3, 9, 'https://example.com/cascos/scorpion_exo_r1_air.jpg'),
-('LS2 Arrow C Evo', 'Casco integral con buena ventilación y pantalla solar.', 249.99, 'XL', 3, 10, 'https://example.com/cascos/ls2_arrow_c_evo.jpg'),
-('Nolan N87', 'Casco integral cómodo y con buena relación calidad-precio.', 199.99, 'M', 3, 12, 'https://example.com/cascos/nolan_n87.jpg'),
-('Shark Spartan GT', 'Casco deportivo con diseño agresivo y sistema de ventilación.', 429.99, 'L', 3, 7, 'https://example.com/cascos/shark_spartan_gt.jpg');
+('Shoei NXR 2', 'Casco integral con calota de fibra AIM y excelente ventilación.', 499.99, 'M', 3, 7, 'https://motossoria.es/2944-large_default/casco-shoei-nxr-2-black.jpg'),
+('AGV K6', 'Casco deportivo ligero con diseño aerodinámico.', 399.99, 'L', 3, 6, 'https://cdn2.louis.de/dynamic/articles/o_resize,w_1800,h_1800,m_limit,c_fff::o_extension,e_webp/35.fb.46.ARG217335AGVK6SD5.JPG'),
+('Arai Signet-X', 'Casco premium con sistema de ventilación avanzado.', 599.00, 'XL', 3, 4, 'https://i.ebayimg.com/images/g/oIgAAOSwW2hd-Cdy/s-l1600.jpg'),
+('HJC RPHA 11 Pro', 'Casco de fibra con pantalla antivaho y sistema rápido.', 379.99, 'M', 3, 8, 'https://motosbodero.es/wp-content/uploads/2020/12/RPHA11-solid-sfblack-side.png'),
+('Schuberth C4 Pro', 'Casco modular con sonido mejorado y aerodinámica.', 649.99, 'L', 3, 3, 'https://www.motobasic.es/wp-content/uploads/2020/11/8660-CASCO-SCHUBERTH-C4-PRO-MATT-BLACK.jpg'),
+('Bell Race Star Flex DLX', 'Casco de carreras con calota compuesta y diseño agresivo.', 699.00, 'M', 3, 5, 'https://cdn2.louis.de/dynamic/articles/o_resize,w_1800,h_1800,m_limit,c_fff::o_extension,e_webp/80.1f.4e.ARG217535BellRaceStarFlexDLX23H1.JPG'),
+('Scorpion EXO-R1 Air', 'Casco deportivo con sistema AirFit para ajuste fácil.', 349.99, 'L', 3, 9, 'https://cdn2.louis.de/dynamic/articles/o_resize,w_1800,h_1800,m_limit,c_fff::o_extension,e_webp/2c.2a.72.ARG217521ScorpionExoR1EvoCarbonAirH1.JPG'),
+('LS2 Arrow C Evo', 'Casco integral con buena ventilación y pantalla solar.', 249.99, 'XL', 3, 10, 'https://www.outletmotard.es/887-thickbox_default/ls2-casco-ff323-arrow-c-evo-solid-carbon.jpg'),
+('Nolan N87', 'Casco integral cómodo y con buena relación calidad-precio.', 199.99, 'M', 3, 12, 'https://cdn2.louis.de/dynamic/articles/o_resize,w_1800,h_1800,m_limit,c_fff::o_extension,e_webp/5c.55.d4.H1NolanN87ClassicMattSchwarz21656541019.JPG'),
+('Shark Spartan GT', 'Casco deportivo con diseño agresivo y sistema de ventilación.', 429.99, 'L', 3, 7, 'https://motoequipacion.com/10521-large_default/casco-shark-spartan-gt-pro-carbon-skin-carbono-anthracite.jpg');
 
 INSERT INTO producto (nombre, descripcion, precio, talla, categoria_id, stock, imagenurl) VALUES 
-('Michelin Road 6', 'Neumático sport-touring con gran durabilidad.', 189.99, '180/55ZR17', 4, 10, 'https://example.com/ruedas/michelin_road_6.jpg'),
-('Pirelli Diablo Rosso IV', 'Neumático deportivo con excelente agarre en seco.', 219.99, '120/70ZR17', 4, 8, 'https://example.com/ruedas/pirelli_diablo_rosso_iv.jpg'),
-('Bridgestone Battlax T32', 'Neumático para todo uso con buena estabilidad.', 199.99, '190/50ZR17', 4, 7, 'https://example.com/ruedas/bridgestone_battlax_t32.jpg'),
-('Continental ContiSportAttack 4', 'Neumático deportivo con agarre y respuesta rápida.', 229.99, '120/70ZR17', 4, 6, 'https://example.com/ruedas/continental_contisportattack_4.jpg'),
-('Metzeler Roadtec 01 SE', 'Neumático sport-touring con buena tracción en mojado.', 179.99, '180/55ZR17', 4, 9, 'https://example.com/ruedas/metzeler_roadtec_01_se.jpg'),
-('Dunlop Sportmax Q4', 'Neumático racing para circuito y uso agresivo.', 249.99, '120/70ZR17', 4, 4, 'https://example.com/ruedas/dunlop_sportmax_q4.jpg'),
-('Avon Spirit ST', 'Neumático touring con buena resistencia al desgaste.', 169.99, '180/55ZR17', 4, 10, 'https://example.com/ruedas/avon_spirit_st.jpg'),
-('Shinko 005', 'Neumático deportivo asequible con buen rendimiento.', 129.99, '120/70ZR17', 4, 11, 'https://example.com/ruedas/shinko_005.jpg'),
-('Kumho Ecsta PS71', 'Neumático de alto rendimiento para motos deportivas.', 179.99, '190/50ZR17', 4, 7, 'https://example.com/ruedas/kumho_ecsta_ps71.jpg'),
-('Maxxis Supermaxx ST', 'Neumático sport-touring con buena adherencia y durabilidad.', 159.99, '120/70ZR17', 4, 9, 'https://example.com/ruedas/maxxis_supermaxx_st.jpg');
+('Michelin Road 6', 'Neumático sport-touring con gran durabilidad.', 189.99, '180/55ZR17', 4, 10, 'https://media.rodi.es/marca/michelin/neumaticos/ficha/michelin-road-6.png'),
+('Pirelli Diablo Rosso IV', 'Neumático deportivo con excelente agarre en seco.', 219.99, '120/70ZR17', 4, 8, 'https://neuromoto.es/wp-content/uploads/2021/02/11842-thickbox_default-PIRELLI-DIABLO-ROSSO-IV-12070ZR17-MC-58W-TL.jpg'),
+('Bridgestone Battlax T32', 'Neumático para todo uso con buena estabilidad.', 199.99, '190/50ZR17', 4, 7, 'https://www.ramirezmoto.es/admin/pictures/zoom/Neumatico-Bridgestone-T32-120-70-17-W58-1.jpg'),
+('Continental ContiSportAttack 4', 'Neumático deportivo con agarre y respuesta rápida.', 229.99, '120/70ZR17', 4, 6, 'https://www.ramirezmoto.es/admin/pictures/zoom/Neumatico-Continental-Contisportattack-4-120-70-17-W58-1.jpg'),
+('Metzeler Roadtec 01 SE', 'Neumático sport-touring con buena tracción en mojado.', 179.99, '180/55ZR17', 4, 9, 'https://s1.medias-norauto.es/images_produits/metzeler_roadtec/900x900/neumatico-metzeler-roadtec-01-se-180-55-r-17-73-w-tl-trasera-non--2272993.jpg'),
+('Dunlop Sportmax Q4', 'Neumático racing para circuito y uso agresivo.', 249.99, '120/70ZR17', 4, 4, 'https://m.media-amazon.com/images/I/512ZkRDUx7L._AC_SL1200_.jpg'),
+('Avon Spirit ST', 'Neumático touring con buena resistencia al desgaste.', 169.99, '180/55ZR17', 4, 10, 'https://d3dqm2cphiokpn.cloudfront.net/.wh/ea/uc/i580fbfd40103de9f00007f2e6b030cf65bf989e495420801e180070000805a/avon-spirit-st.png'),
+('Shinko 005', 'Neumático deportivo asequible con buen rendimiento.', 129.99, '120/70ZR17', 4, 11, 'https://cdn.zodiac.nl/media/zodiac-generated/9ea460cf/a818/482b/9540/e4380b5ca1f6/standard-rgba.png'),
+('Maxxis Supermaxx ST', 'Neumático sport-touring con buena adherencia y durabilidad.', 159.99, '120/70ZR17', 4, 9, 'https://media.rodi.es/marca/maxxis/neumaticos/ficha/maxxis-supermaxx-st-ma-st2.png');
 
 INSERT INTO producto (nombre, descripcion, precio, talla, categoria_id, stock, imagenurl) VALUES 
-('Akrapovic Slip-On Line Yamaha MT-07', 'Escape homologado de titanio con silenciador deportivo.', 749.00, '-', 5, 3, 'https://example.com/escapes/akrapovic_mt07.jpg'),
-('Arrow Pro-Race', 'Escape completo en acero inoxidable para mayor potencia.', 699.00, '-', 5, 5, 'https://example.com/escapes/arrow_pro_race.jpg'),
-('Scorpion Serket', 'Escape deportivo con acabado negro mate y sonido agresivo.', 499.99, '-', 5, 6, 'https://example.com/escapes/scorpion_serket.jpg'),
-('Yoshimura R-77', 'Escape con diseño compacto y gran rendimiento.', 529.00, '-', 5, 4, 'https://example.com/escapes/yoshimura_r77.jpg'),
-('Termignoni GP', 'Escape de competición con sonido característico.', 899.99, '-', 5, 2, 'https://example.com/escapes/termignoni_gp.jpg'),
-('Remus Hypercone', 'Escape homologado con diseño agresivo y materiales premium.', 599.00, '-', 5, 5, 'https://example.com/escapes/remus_hypercone.jpg'),
-('LeoVince SBK GP Pro', 'Escape racing con alto rendimiento y peso reducido.', 649.99, '-', 5, 3, 'https://example.com/escapes/leovince_sbk_gp_pro.jpg'),
-('FMF Factory 4.1', 'Escape para motos off-road y trail con potencia mejorada.', 439.99, '-', 5, 6, 'https://example.com/escapes/fmf_factory_41.jpg'),
-('GPR Exhausts M2', 'Escape deportivo con excelente acabado y durabilidad.', 459.00, '-', 5, 4, 'https://example.com/escapes/gpr_m2.jpg'),
-('Two Brothers Racing S1', 'Escape racing con peso reducido y sonido potente.', 519.99, '-', 5, 3, 'https://example.com/escapes/two_brothers_s1.jpg');
+('Akrapovic Slip-On Line Yamaha MT-07', 'Escape homologado de titanio con silenciador deportivo.', 749.00, '-', 5, 3, 'https://www.motorraiz.com/images/products/akrapovic_s-y7r2-afc.jpg'),
+('Arrow Pro-Race', 'Escape completo en acero inoxidable para mayor potencia.', 699.00, '-', 5, 5, 'https://media.motoblouz.com/images/catalogue/prorace-nichrom_5aafc70de4088.jpg'),
+('Scorpion Serket', 'Escape deportivo con acabado negro mate y sonido agresivo.', 499.99, '-', 5, 6, 'https://media.motoblouz.com/images/catalogue/17-228236_60ffdec390d88.jpg'),
+('Yoshimura R-77', 'Escape con diseño compacto y gran rendimiento.', 529.00, '-', 5, 4, 'https://m.media-amazon.com/images/I/71+53rgUmbL._AC_SL1500_.jpg'),
+('Termignoni GP', 'Escape de competición con sonido característico.', 899.99, '-', 5, 2, 'https://www.motostorm.it/images/products/large/scarichi/termignoni_duke_p.jpg'),
+('Remus Hypercone', 'Escape homologado con diseño agresivo y materiales premium.', 599.00, '-', 5, 5, 'https://www.carbon4us.com/8957-thickbox_default/escape-remus-hypercone.jpg'),
+('LeoVince SBK GP Pro', 'Escape racing con alto rendimiento y peso reducido.', 649.99, '-', 5, 3, 'https://www.rwn-moto.es/media/image/99/07/20/LeoVince-Auspuffanlage-GP-STYLE-Edelstahl-Slip-On_Side.jpg'),
+('FMF Factory 4.1', 'Escape para motos off-road y trail con potencia mejorada.', 439.99, '-', 5, 6, 'https://motoracingburgos.net/859535-large_default/silenciador-fmf-factory-41-rct.jpg'),
+('GPR Exhausts M2', 'Escape deportivo con excelente acabado y durabilidad.', 459.00, '-', 5, 4, 'https://www.gprexhaustsystems.es/tmp/images/HTTPS___S3-EU-WEST-1.AMAZONAWS.COM_MEDIA.GPR.IT_GPR2020_SILENCER+PICS_M3+TIT+00_W_950_H_700_BG_FFFFFF_0_ADJUST.JPG'),
+('Two Brothers Racing S1', 'Escape racing con peso reducido y sonido potente.', 519.99, '-', 5, 3, 'https://m.media-amazon.com/images/I/7133TJ3mpJL._AC_SL1500_.jpg');
 
 
 INSERT INTO producto (nombre, descripcion, precio, talla, categoria_id, stock, imagenurl) VALUES 
-('Yamaha MT-07', 'Naked de media cilindrada ideal para todo tipo de pilotos.', 7599.00, '-', 6, 3, 'https://example.com/motos/yamaha_mt07.jpg'),
-('KTM Duke 390', 'Moto naked ligera y ágil con gran respuesta en ciudad.', 6199.00, '-', 6, 5, 'https://example.com/motos/ktm_duke_390.jpg'),
-('Honda CBR500R', 'Deportiva de nivel medio para iniciación y calle.', 6899.00, '-', 6, 4, 'https://example.com/motos/honda_cbr500r.jpg'),
-('Suzuki GSX-R600', 'Deportiva de media cilindrada para circuitos y carretera.', 10499.00, '-', 6, 2, 'https://example.com/motos/suzuki_gsxr600.jpg'),
-('BMW R1250GS', 'Trail adventure con tecnología avanzada y motor potente.', 17499.00, '-', 6, 3, 'https://example.com/motos/bmw_r1250gs.jpg'),
-('Ducati Monster 821', 'Naked deportiva con carácter y diseño italiano.', 11999.00, '-', 6, 3, 'https://example.com/motos/ducati_monster_821.jpg'),
-('Kawasaki Ninja ZX-6R', 'Deportiva con gran rendimiento y agilidad.', 10499.00, '-', 6, 4, 'https://example.com/motos/kawasaki_ninja_zx6r.jpg'),
-('Triumph Street Triple RS', 'Naked deportiva con excelente equilibrio y potencia.', 11999.00, '-', 6, 3, 'https://example.com/motos/triumph_street_triple_rs.jpg'),
-('Honda CRF1100L Africa Twin', 'Adventure touring con capacidad para largas rutas.', 14999.00, '-', 6, 2, 'https://example.com/motos/honda_africa_twin.jpg'),
-('Yamaha YZF-R3', 'Deportiva ligera para iniciación en carretera y circuito.', 5499.00, '-', 6, 5, 'https://example.com/motos/yamaha_yzf_r3.jpg');
+('Yamaha MT-07', 'Naked de media cilindrada ideal para todo tipo de pilotos.', 7599.00, '-', 6, 3, 'https://www.motofichas.com/images/phocagallery/yamaha/mt-07-2022/01-yamaha-mt-07-2022-estudio-cyan.jpg'),
+('KTM Duke 390', 'Moto naked ligera y ágil con gran respuesta en ciudad.', 6199.00, '-', 6, 5, 'https://www.secomoto.com/media/catalog/product/cache/7f4886e829559f8f86e18b271732810c/k/t/ktm-390-duke-2025-azul-4.jpg'),
+('Honda CBR500R', 'Deportiva de nivel medio para iniciación y calle.', 6899.00, '-', 6, 4, 'https://soymotero.net/wp-content/uploads/2021/09/nueva_honda_cbr500r_2022_acabado_rojo_grand_prix.jpg'),
+('Suzuki GSX-R600', 'Deportiva de media cilindrada para circuitos y carretera.', 10499.00, '-', 6, 2, 'https://motos.espirituracer.com/archivos/2018/12/suzuki-GSX-R-600-K7.jpg'),
+('BMW R1250GS', 'Trail adventure con tecnología avanzada y motor potente.', 17499.00, '-', 6, 3, 'https://m.media-amazon.com/images/I/71llJw7HEeL._AC_SL1500_.jpg'),
+('Ducati Monster 821', 'Naked deportiva con carácter y diseño italiano.', 11999.00, '-', 6, 3, 'https://m.media-amazon.com/images/I/61fodxCw4JL._AC_SL1500_.jpg'),
+('Kawasaki Ninja ZX-6R', 'Deportiva con gran rendimiento y agilidad.', 10499.00, '-', 6, 4, 'https://storage.kawasaki.eu/public/kawasaki.eu/en-EU/model/24MY_Ninja_ZX-6R_GN1_STU__2_.png'),
+('Triumph Street Triple RS', 'Naked deportiva con excelente equilibrio y potencia.', 11999.00, '-', 6, 3, 'https://media.triumphmotorcycles.co.uk/image/upload/q_auto:eco/sitecoremedialibrary/media-library/images/motorcycles/roadsters-supersports/my25/my25%20colours/street%20triple%20765%20rs/360/629/street%20triple%20rs_my25_phantom%20black_360_629px.png'),
+('Honda CRF1100L Africa Twin', 'Adventure touring con capacidad para largas rutas.', 14999.00, '-', 6, 2, 'https://www.arriolamotor.com/wp-content/uploads/2021/10/408727_23YM_AFRICA_TWIN_ADVENTURE_SPORTS.jpg'),
+('Yamaha YZF-R3', 'Deportiva ligera para iniciación en carretera y circuito.', 5499.00, '-', 6, 5, 'https://dmotos.es/wp-content/uploads/2023/11/yamaha-yzf-r3-negro-2025-600x338.jpg');
 
+HECHO  HASTA AQUÍ
 INSERT INTO producto (nombre, descripcion, precio, talla, categoria_id, stock, imagenurl) VALUES 
 ('Alpinestars SMX-6 V2', 'Botas deportivas para carretera con protección avanzada.', 249.99, '43', 7, 6, 'https://example.com/botas/alpinestars_smx6_v2.jpg'),
 ('Dainese Torque 3 Out', 'Botas de moto touring impermeables y cómodas.', 199.99, '42', 7, 7, 'https://example.com/botas/dainese_torque_3_out.jpg'),

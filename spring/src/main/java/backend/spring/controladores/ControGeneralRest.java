@@ -1,14 +1,11 @@
 package backend.spring.controladores;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.lang.NonNull;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import backend.spring.modelos.Rol;
 import backend.spring.modelos.RolUsuario;
@@ -18,11 +15,9 @@ import backend.spring.repositorios.RepoRolUsuario;
 import backend.spring.repositorios.RepoTelefono;
 import backend.spring.repositorios.RepoUsuario;
 
-
-
-
 @RestController
-public class ControGeneral {
+@RequestMapping("/api") // prefijo común para api REST
+public class ControGeneralRest {
 
     @Autowired
     private RepoTelefono repoTelefono;
@@ -36,44 +31,10 @@ public class ControGeneral {
     @Autowired
     private RepoRolUsuario repoRolUsuario;
 
-    
-    @GetMapping("/")
-    public String index() {
-        return "index";
-    }
+    // Para endpoints de vistas no es habitual en REST, así que las elimino o deberías servirlas con otro controlador @Controller
 
-    @GetMapping("/login")
-    public String login() {
-        return "login";
-    }
-    
-    @GetMapping("/ayuda")
-    public String ayuda() {
-        return "ayuda";
-    }
-
-    @GetMapping("/error")
-    public String showError(Model model) {
-
-        model.addAttribute("titulo", "ERROR");
-        model.addAttribute("mensaje", "Error genérico");
-
-        return "error";
-    }
-
-    @GetMapping("/acerca")
-    public String showAcerca() {
-        return "acerca";
-    }
-
-    @GetMapping("/register")
-    public String registerForm() {
-        return "register";
-    }
-    
     @PostMapping("/register")
-    public String register(
-        Model modelo, 
+    public ResponseEntity<?> register(
         @NonNull @RequestParam String username,
         @NonNull @RequestParam String password,
         @NonNull @RequestParam String nombre,
@@ -82,11 +43,17 @@ public class ControGeneral {
         @NonNull @RequestParam Long telefono,
         @NonNull @RequestParam String email) {        
 
-        Telefono tel = new Telefono();
-        Usuario usuario = new Usuario();
-        //BCryptPasswordEncoder bPasswordEncoder = new BCryptPasswordEncoder();
-        
         try {
+            if (!repoUsuario.findByUsername(username).isEmpty()) {
+                return ResponseEntity.status(HttpStatus.CONFLICT)
+                    .body("El username ya existe");
+            }
+            if (!repoUsuario.findByEmail(email).isEmpty()) {
+                return ResponseEntity.status(HttpStatus.CONFLICT)
+                    .body("El email ya está registrado");
+            }
+
+            Usuario usuario = new Usuario();
             usuario.setNombre(nombre);
             usuario.setApellido(apellidos);
             usuario.setUsername(username);
@@ -95,6 +62,7 @@ public class ControGeneral {
             usuario.setEnabled(true);
             usuario = repoUsuario.save(usuario);
             
+            Telefono tel = new Telefono();
             tel.setNumero(telefono);
             tel.setCodigoPais(pais);
             tel.setUsuario(usuario);
@@ -105,15 +73,12 @@ public class ControGeneral {
             rolUsuario.setUsuario(usuario);
             repoRolUsuario.save(rolUsuario);
 
-            modelo.addAttribute("titulo", "Alta nuevo usuario");
-            modelo.addAttribute("mensaje", "El usuario "+username+" está siendo creado.");
-            
-        } catch (Exception e){
-            modelo.addAttribute("titulo", "Error al crear nuevo usuario");
-            modelo.addAttribute("mensaje", "El usuario "+username+" no ha podido crearse."+
-                "Probablemente el username o email introducidos ya existen en la base de datos.");
-        }
+            return ResponseEntity.status(HttpStatus.CREATED)
+                    .body("Usuario " + username + " creado correctamente");
 
-        return "error";
+        } catch (Exception e){
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body("Error al crear usuario: " + e.getMessage());
+        }
     }
 }

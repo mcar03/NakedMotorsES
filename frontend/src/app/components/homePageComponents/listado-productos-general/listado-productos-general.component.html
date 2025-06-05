@@ -6,7 +6,7 @@
 
 <div class="productos-grid">
   <div class="producto-card" *ngFor="let producto of productosPaginados; let i = index">
-    <img [src]="producto.imagen" [alt]="producto.nombre" />
+    <img [src]="producto.imagenurl" [alt]="producto.nombre" />
     <h3>{{ producto.nombre }}</h3>
     <p class="precio">{{ producto.precio | currency:'EUR' }}</p>
 

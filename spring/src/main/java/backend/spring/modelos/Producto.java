@@ -25,6 +25,7 @@ public class Producto {
     private String talla;
     private Float precio;
     private int stock;
+    private String imagenurl;
     @ManyToOne
     private Categoria categoria;
 }

@@ -1,5 +1,19 @@
-import { Component } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Component, Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { ServiProductoService } from 'src/app/services/servi-producto.service';
 
+
+export interface Producto {
+  nombre: string;
+  precio: number;
+  imagenurl: string;
+  liked?: boolean;
+}
+
+@Injectable({
+  providedIn: 'root'
+})
 @Component({
   selector: 'app-listado-productos-general',
   templateUrl: './listado-productos-general.component.html',
@@ -7,63 +21,33 @@ import { Component } from '@angular/core';
 })
 export class ListadoProductosGeneralComponent {
 
-   productos = [
-   {
-    nombre: 'Casco integral Shark',
-    precio: 129.99,
-    imagen: 'assets/img/img-prueba-local/casco-shark.jpg',
-    liked: false
-  },
-  {
-    nombre: 'Guantes racing carbono',
-    precio: 59.95,
-    imagen: 'assets/img/img-prueba-local/guantes-carbono.jpg',
-    liked: false
-  },
-  {
-    nombre: 'Chaqueta touring Pro',
-    precio: 199.90,
-    imagen: 'assets/img/img-prueba-local/chaqueta-touring-pro.jpg',
-    liked: false
-  },
-  {
-    nombre: 'Escape deportivo Akrapovic',
-    precio: 349.00,
-    imagen: 'assets/img/escape.jpg',
-    liked: false
-  },
-  {
-    nombre: 'Botas Racing Evo',
-    precio: 149.99,
-    imagen: 'assets/img/botas.jpg',
-    liked: false
-  },
-  {
-    nombre: 'Mono de cuero completo',
-    precio: 499.95,
-    imagen: 'assets/img/mono.jpg',
-    liked: false
-  }
-    
-  ];
-
+  productos: Producto[] = [];
   paginaActual = 1;
   productosPorPagina = 5;
 
-  toggleLike(producto: any): void {
-  producto.liked = !producto.liked;
-}
+  constructor(private productoService: ServiProductoService) {}
 
-  get productosPaginados() {
+  ngOnInit(): void {
+    this.productoService.obtenerProductos().subscribe(data => {
+      // Añadimos el campo "liked" por si no viene del backend
+      this.productos = data.map(p => ({ ...p, liked: false }));
+    });
+  }
+
+  get productosPaginados(): Producto[] {
     const inicio = (this.paginaActual - 1) * this.productosPorPagina;
     return this.productos.slice(inicio, inicio + this.productosPorPagina);
   }
 
-  get totalPaginas() {
+  get totalPaginas(): number {
     return Math.ceil(this.productos.length / this.productosPorPagina);
   }
 
-  cambiarPagina(pagina: number) {
+  cambiarPagina(pagina: number): void {
     this.paginaActual = pagina;
+  }
+
+  toggleLike(producto: Producto): void {
+    producto.liked = !producto.liked;
   }
 }

@@ -41,7 +41,7 @@ INSERT INTO producto (nombre, descripcion, precio, talla, categoria_id, stock, i
 ('Scorpion EXO-R1 Air', 'Casco deportivo con sistema AirFit para ajuste fácil.', 349.99, 'L', 3, 9, 'https://cdn2.louis.de/dynamic/articles/o_resize,w_1800,h_1800,m_limit,c_fff::o_extension,e_webp/2c.2a.72.ARG217521ScorpionExoR1EvoCarbonAirH1.JPG'),
 ('LS2 Arrow C Evo', 'Casco integral con buena ventilación y pantalla solar.', 249.99, 'XL', 3, 10, 'https://www.outletmotard.es/887-thickbox_default/ls2-casco-ff323-arrow-c-evo-solid-carbon.jpg'),
 ('Nolan N87', 'Casco integral cómodo y con buena relación calidad-precio.', 199.99, 'M', 3, 12, 'https://cdn2.louis.de/dynamic/articles/o_resize,w_1800,h_1800,m_limit,c_fff::o_extension,e_webp/5c.55.d4.H1NolanN87ClassicMattSchwarz21656541019.JPG'),
-('Shark Spartan GT', 'Casco deportivo con diseño agresivo y sistema de ventilación.', 429.99, 'L', 3, 7, 'https://motoequipacion.com/10521-large_default/casco-shark-spartan-gt-pro-carbon-skin-carbono-anthracite.jpg');
+('Shark Spartan GT', 'Casco deportivo con diseño agresivo y sistema de ventilación.', 429.99, 'L', 3, 7, 'https://m.media-amazon.com/images/I/61fnmbLGdtL._AC_SL1200_.jpg');
 
 INSERT INTO producto (nombre, descripcion, precio, talla, categoria_id, stock, imagenurl) VALUES 
 ('Michelin Road 6', 'Neumático sport-touring con gran durabilidad.', 189.99, '180/55ZR17', 4, 10, 'https://media.rodi.es/marca/michelin/neumaticos/ficha/michelin-road-6.png'),
@@ -75,22 +75,22 @@ INSERT INTO producto (nombre, descripcion, precio, talla, categoria_id, stock, i
 ('BMW R1250GS', 'Trail adventure con tecnología avanzada y motor potente.', 17499.00, '-', 6, 3, 'https://m.media-amazon.com/images/I/71llJw7HEeL._AC_SL1500_.jpg'),
 ('Ducati Monster 821', 'Naked deportiva con carácter y diseño italiano.', 11999.00, '-', 6, 3, 'https://m.media-amazon.com/images/I/61fodxCw4JL._AC_SL1500_.jpg'),
 ('Kawasaki Ninja ZX-6R', 'Deportiva con gran rendimiento y agilidad.', 10499.00, '-', 6, 4, 'https://storage.kawasaki.eu/public/kawasaki.eu/en-EU/model/24MY_Ninja_ZX-6R_GN1_STU__2_.png'),
-('Triumph Street Triple RS', 'Naked deportiva con excelente equilibrio y potencia.', 11999.00, '-', 6, 3, 'https://media.triumphmotorcycles.co.uk/image/upload/q_auto:eco/sitecoremedialibrary/media-library/images/motorcycles/roadsters-supersports/my25/my25%20colours/street%20triple%20765%20rs/360/629/street%20triple%20rs_my25_phantom%20black_360_629px.png'),
+('Triumph Street Triple RS', 'Naked deportiva con excelente equilibrio y potencia.', 11999.00, '-', 6, 3, 'https://www.motofichas.com/images/phocagallery/triumph/street-triple-rs-2023/001-triumph-street-triple-765-rs-2025-estudio-negro-02.jpg'),
 ('Honda CRF1100L Africa Twin', 'Adventure touring con capacidad para largas rutas.', 14999.00, '-', 6, 2, 'https://www.arriolamotor.com/wp-content/uploads/2021/10/408727_23YM_AFRICA_TWIN_ADVENTURE_SPORTS.jpg'),
 ('Yamaha YZF-R3', 'Deportiva ligera para iniciación en carretera y circuito.', 5499.00, '-', 6, 5, 'https://dmotos.es/wp-content/uploads/2023/11/yamaha-yzf-r3-negro-2025-600x338.jpg');
 
-HECHO  HASTA AQUÍ
+
 INSERT INTO producto (nombre, descripcion, precio, talla, categoria_id, stock, imagenurl) VALUES 
-('Alpinestars SMX-6 V2', 'Botas deportivas para carretera con protección avanzada.', 249.99, '43', 7, 6, 'https://example.com/botas/alpinestars_smx6_v2.jpg'),
-('Dainese Torque 3 Out', 'Botas de moto touring impermeables y cómodas.', 199.99, '42', 7, 7, 'https://example.com/botas/dainese_torque_3_out.jpg'),
-('Sidi Vortice', 'Botas racing con excelente protección y sistema de cierre rápido.', 349.99, '44', 7, 4, 'https://example.com/botas/sidi_vortice.jpg'),
-('TCX X-Blast', 'Botas trail con buena impermeabilidad y suela antideslizante.', 189.99, '43', 7, 8, 'https://example.com/botas/tcx_x_blast.jpg'),
-('Forma Adventure', 'Botas touring con refuerzos y membrana impermeable.', 229.99, '42', 7, 7, 'https://example.com/botas/forma_adventure.jpg'),
-('Gaerne GP1', 'Botas racing de alto rendimiento y diseño clásico.', 399.99, '43', 7, 3, 'https://example.com/botas/gaerne_gp1.jpg'),
-('Alpinestars Stella SMX-6 V2', 'Botas deportivas para mujer con protección avanzada.', 259.99, '39', 7, 5, 'https://example.com/botas/alpinestars_stella_smx6_v2.jpg'),
-('Dainese D-Explorer', 'Botas adventure con alta resistencia y confort.', 219.99, '44', 7, 6, 'https://example.com/botas/dainese_d_explorer.jpg'),
-('Sidi Adventure 2', 'Botas trail con protección reforzada y membrana Gore-Tex.', 279.99, '43', 7, 4, 'https://example.com/botas/sidi_adventure_2.jpg'),
-('TCX Rush WP', 'Botas urbanas impermeables y ligeras.', 149.99, '42', 7, 10, 'https://example.com/botas/tcx_rush_wp.jpg');
+('Alpinestars SMX-6 V2', 'Botas deportivas para carretera con protección avanzada.', 249.99, '43', 7, 6, 'https://media.motoblouz.com/images/catalogue/alpinestars-smx-6-blkrd-1.jpg'),
+('Dainese Torque 3 Out', 'Botas de moto touring impermeables y cómodas.', 199.99, '42', 7, 7, 'https://motoscanosport.com/wp-content/uploads/botas-dainese-torque-3-out-lady-negro-antracita-11.jpg'),
+('Sidi Vortice', 'Botas racing con excelente protección y sistema de cierre rápido.', 349.99, '44', 7, 4, 'https://m.media-amazon.com/images/I/71IqQnZXX-L._AC_SX575_.jpg'),
+('TCX X-Blast', 'Botas trail con buena impermeabilidad y suela antideslizante.', 189.99, '43', 7, 8, 'https://m.media-amazon.com/images/I/81VMDDQi9KL._AC_SY575_.jpg'),
+('Forma Adventure', 'Botas touring con refuerzos y membrana impermeable.', 229.99, '42', 7, 7, 'https://m.media-amazon.com/images/I/91fpEE38ENL._AC_SX575_.jpg'),
+('Gaerne GP1', 'Botas racing de alto rendimiento y diseño clásico.', 399.99, '43', 7, 3, 'https://m.media-amazon.com/images/I/616moYRBs+S._AC_SX575_.jpg'),
+('Alpinestars Stella SMX-6 V2', 'Botas deportivas para mujer con protección avanzada.', 259.99, '39', 7, 5, 'https://m.media-amazon.com/images/I/61novUSjtvL._AC_SX569_.jpg'),
+('Dainese D-Explorer', 'Botas adventure con alta resistencia y confort.', 219.99, '44', 7, 6, 'https://i.ebayimg.com/images/g/oKgAAOSwA9tj9yyw/s-l1600.webp'),
+('Sidi Adventure 2', 'Botas trail con protección reforzada y membrana Gore-Tex.', 279.99, '43', 7, 4, 'https://m.media-amazon.com/images/I/514gDwhYXdL._AC_SY575_.jpg'),
+('TCX Rush WP', 'Botas urbanas impermeables y ligeras.', 149.99, '42', 7, 10, 'https://m.media-amazon.com/images/I/71f3D3u5IZL._AC_SY606_.jpg');
 
 
 

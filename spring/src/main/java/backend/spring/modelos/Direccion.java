@@ -27,6 +27,10 @@ public class Direccion {
     private CodigoPostal codigoPostal;
     @ManyToOne
     private Usuario usuario;
+    public Object getProvincia() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getProvincia'");
+    }
 }
 
 

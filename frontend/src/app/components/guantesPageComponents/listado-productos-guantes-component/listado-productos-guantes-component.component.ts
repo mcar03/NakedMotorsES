@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { ServiProductoService } from 'src/app/services/servi-producto.service';
 
-
 export interface Producto {
   id: number;
   nombre: string;
@@ -16,11 +15,11 @@ export interface Producto {
 }
 
 @Component({
-  selector: 'app-listado-botas',
-  templateUrl: './listado-botas.component.html',
-  styleUrls: ['./listado-botas.component.css']
+  selector: 'app-listado-productos-guantes-component',
+  templateUrl: './listado-productos-guantes-component.component.html',
+  styleUrls: ['./listado-productos-guantes-component.component.css']
 })
-export class ListadoBotasComponent {
+export class ListadoProductosGuantesComponentComponent {
 
   productos: Producto[] = [];
     productosPorCategoria: { [categoria: string]: Producto[] } = {};
@@ -30,7 +29,7 @@ export class ListadoBotasComponent {
     ngOnInit(): void {
       this.productoService.obtenerProductos().subscribe(data => {
         this.productos = data
-          .filter(p => p.categoriaNombre === 'Botas')
+          .filter(p => p.categoriaNombre === 'Guantes')
           .map(p => ({ ...p, liked: false }));
         this.organizarPorCategoria();
       });

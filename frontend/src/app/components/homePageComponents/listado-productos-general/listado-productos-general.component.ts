@@ -5,11 +5,18 @@ import { ServiProductoService } from 'src/app/services/servi-producto.service';
 
 
 export interface Producto {
+  id: number;
   nombre: string;
+  descripcion: string;
+  talla: string;
   precio: number;
+  stock: number;
   imagenurl: string;
   liked?: boolean;
+  categoriaId: number;
+  categoriaNombre: string;
 }
+
 
 @Injectable({
   providedIn: 'root'

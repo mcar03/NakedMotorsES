@@ -1,69 +1,56 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ServiProductoService } from 'src/app/services/servi-producto.service';
+
+export interface Producto {
+  id: number;
+  nombre: string;
+  descripcion: string;
+  talla: string;
+  precio: number;
+  stock: number;
+  imagenurl: string;
+  liked?: boolean;
+  categoriaId: number;
+  categoriaNombre: string;
+}
 
 @Component({
   selector: 'app-listado-productos-motos',
   templateUrl: './listado-productos-motos.component.html',
   styleUrls: ['./listado-productos-motos.component.css']
 })
-export class ListadoProductosMotosComponent {
+export class ListadoProductosMotosComponent implements OnInit {
 
-  productos = [
-    {
-     nombre: 'Casco integral Shark',
-     precio: 129.99,
-     imagen: 'assets/img/img-prueba-local/casco-shark.jpg',
-     liked: false
-   },
-   {
-     nombre: 'Guantes racing carbono',
-     precio: 59.95,
-     imagen: 'assets/img/img-prueba-local/guantes-carbono.jpg',
-     liked: false
-   },
-   {
-     nombre: 'Chaqueta touring Pro',
-     precio: 199.90,
-     imagen: 'assets/img/img-prueba-local/chaqueta-touring-pro.jpg',
-     liked: false
-   },
-   {
-     nombre: 'Escape deportivo Akrapovic',
-     precio: 349.00,
-     imagen: 'assets/img/escape.jpg',
-     liked: false
-   },
-   {
-     nombre: 'Botas Racing Evo',
-     precio: 149.99,
-     imagen: 'assets/img/botas.jpg',
-     liked: false
-   },
-   {
-     nombre: 'Mono de cuero completo',
-     precio: 499.95,
-     imagen: 'assets/img/mono.jpg',
-     liked: false
-   }
-     
-   ];
- 
-   paginaActual = 1;
-   productosPorPagina = 5;
- 
-   toggleLike(producto: any): void {
-   producto.liked = !producto.liked;
- }
- 
-   get productosPaginados() {
-     const inicio = (this.paginaActual - 1) * this.productosPorPagina;
-     return this.productos.slice(inicio, inicio + this.productosPorPagina);
-   }
- 
-   get totalPaginas() {
-     return Math.ceil(this.productos.length / this.productosPorPagina);
-   }
- 
-   cambiarPagina(pagina: number) {
-     this.paginaActual = pagina;
-   }
+  productos: Producto[] = [];
+  productosPorCategoria: { [categoria: string]: Producto[] } = {};
+
+  constructor(private productoService: ServiProductoService) {}
+
+  ngOnInit(): void {
+    this.productoService.obtenerProductos().subscribe(data => {
+      this.productos = data
+        .filter(p => p.categoriaNombre === 'Motos')
+        .map(p => ({ ...p, liked: false }));
+      this.organizarPorCategoria();
+    });
+  }
+
+  organizarPorCategoria(): void {
+    this.productosPorCategoria = {};
+    for (const producto of this.productos) {
+      const categoria = producto.categoriaNombre;
+      if (!this.productosPorCategoria[categoria]) {
+        this.productosPorCategoria[categoria] = [];
+      }
+      this.productosPorCategoria[categoria].push(producto);
+    }
+  }
+
+  categorias(): string[] {
+    return Object.keys(this.productosPorCategoria);
+  }
+
+  toggleLike(producto: Producto): void {
+    producto.liked = !producto.liked;
+  }
 }

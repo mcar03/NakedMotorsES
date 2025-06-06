@@ -3,10 +3,16 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
 export interface Producto {
+  id: number;
   nombre: string;
+  descripcion: string;
+  talla: string;
   precio: number;
+  stock: number;
   imagenurl: string;
   liked?: boolean;
+  categoriaId: number;
+  categoriaNombre: string;
 }
 
 @Injectable({

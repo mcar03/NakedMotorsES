@@ -1,0 +1,23 @@
+<div class="title">
+    <h1 class="h2-title">Cascos</h1>
+    <p>Te ofrecemos nuestras mejores protecciones superiores</p>
+  </div>
+  
+  <div *ngFor="let categoria of categorias()">
+    <h2 class="categoria-titulo">{{ categoria }}</h2>
+    <div class="productos-grid">
+      <div class="producto-card" *ngFor="let producto of productosPorCategoria[categoria]">
+        <img [src]="producto.imagenurl" [alt]="producto.nombre" />
+        <h3>{{ producto.nombre }}</h3>
+        <p class="precio">{{ producto.precio | currency:'EUR' }}</p>
+  
+        <div class="botones-producto">
+          <button class="btn-comprar">Añadir al carrito</button>
+          <button class="btn-like" [class.liked]="producto.liked" (click)="toggleLike(producto)">
+            ❤️
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  

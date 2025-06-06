@@ -41,6 +41,11 @@ import { EntradaImagenBotasComponentComponent } from './components/botasPageComp
 import { EntradaImagenTrajeMotoComponentComponent } from './components/trajesMotoPageComponents/entrada-imagen-traje-moto-component/entrada-imagen-traje-moto-component.component';
 import { ListadoBotasComponent } from './components/botasPageComponents/listado-botas/listado-botas.component';
 import { PoliticaPrivacidadComponentComponent } from './components/politica-privacidad-component/politica-privacidad-component.component';
+import { ListadoProductosCascosComponentComponent } from './components/cascosPageComponents/listado-productos-cascos-component/listado-productos-cascos-component.component';
+import { ListadoProductosEscapesComponentComponent } from './components/escapesPageComponents/listado-productos-escapes-component/listado-productos-escapes-component.component';
+import { ListadoProductosGuantesComponentComponent } from './components/guantesPageComponents/listado-productos-guantes-component/listado-productos-guantes-component.component';
+import { ListadoProductosRuedasComponentComponent } from './components/ruedasPageComponents/listado-productos-ruedas-component/listado-productos-ruedas-component.component';
+import { ListadoProductosTrajesMotoComponentComponent } from './components/trajesMotoPageComponents/listado-productos-trajes-moto-component/listado-productos-trajes-moto-component.component';
 
 
 
@@ -76,6 +81,11 @@ import { PoliticaPrivacidadComponentComponent } from './components/politica-priv
     EntradaImagenTrajeMotoComponentComponent,
     ListadoBotasComponent,
     PoliticaPrivacidadComponentComponent,
+    ListadoProductosCascosComponentComponent,
+    ListadoProductosEscapesComponentComponent,
+    ListadoProductosGuantesComponentComponent,
+    ListadoProductosRuedasComponentComponent,
+    ListadoProductosTrajesMotoComponentComponent,
     
     
     

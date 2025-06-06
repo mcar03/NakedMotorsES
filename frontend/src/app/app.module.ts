@@ -47,6 +47,7 @@ import { ListadoProductosGuantesComponentComponent } from './components/guantesP
 import { ListadoProductosRuedasComponentComponent } from './components/ruedasPageComponents/listado-productos-ruedas-component/listado-productos-ruedas-component.component';
 import { ListadoProductosTrajesMotoComponentComponent } from './components/trajesMotoPageComponents/listado-productos-trajes-moto-component/listado-productos-trajes-moto-component.component';
 
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 
 
@@ -95,6 +96,7 @@ import { ListadoProductosTrajesMotoComponentComponent } from './components/traje
     HttpClientModule,
     BrowserAnimationsModule,
     NzLayoutModule,
+    MatSnackBarModule,
     NzIconModule,
     FormsModule,
     NzCarouselModule,

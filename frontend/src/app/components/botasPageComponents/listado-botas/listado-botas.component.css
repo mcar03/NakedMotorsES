@@ -19,6 +19,8 @@
   transition: transform 0.2s;
 }
 
+
+
 .producto-card:hover {
   transform: scale(1.03);
 }

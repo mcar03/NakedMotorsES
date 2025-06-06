@@ -1,6 +1,6 @@
 <div class="title">
-    <h1 class="h2-title">Motos</h1>
-    <p>Te ofrecemos nuestras motos para el disfrute máximo!!</p>
+    <h1 class="h2-title">Guantes</h1>
+    <p>La mejor protección en las manos</p>
   </div>
   
   <div *ngFor="let categoria of categorias()">
@@ -12,7 +12,7 @@
         <p class="precio">{{ producto.precio | currency:'EUR' }}</p>
   
         <div class="botones-producto">
-          <button class="btn-comprar">Añadir al carrito</button>
+          <button class="btn-comprar" (click)="annadirAlCarrito(producto)">Añadir al carrito</button>
           <button class="btn-like" [class.liked]="producto.liked" (click)="toggleLike(producto)">
             ❤️
           </button>

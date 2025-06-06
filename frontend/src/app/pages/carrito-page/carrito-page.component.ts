@@ -1,11 +1,5 @@
-import { Component } from '@angular/core';
-
-interface ProductoCarrito {
-  nombre: string;
-  precio: number;
-  cantidad: number;
-  imagen: string;
-}
+import { Component, OnInit } from '@angular/core';
+import { CarritoService, ProductoCarrito } from 'src/app/services/carrito-service.service';
 
 
 @Component({
@@ -13,32 +7,31 @@ interface ProductoCarrito {
   templateUrl: './carrito-page.component.html',
   styleUrls: ['./carrito-page.component.css']
 })
-export class CarritoPageComponent {
+export class CarritoPageComponent implements OnInit {
+  productos: ProductoCarrito[] = [];
 
-  productos: ProductoCarrito[] = [
-    {
-      nombre: 'Casco Integral',
-      precio: 120,
-      cantidad: 1,
-      imagen: 'assets/img/img-prueba-local/casco-shark.jpg'
-    },
-    {
-      nombre: 'Guantes Racing',
-      precio: 45,
-      cantidad: 2,
-      imagen: 'assets/img/img-prueba-local/guantes-carbono.jpg'
-    }
-  ];
+  constructor(private carritoService: CarritoService) {}
+
+  ngOnInit() {
+    this.carritoService.productos$.subscribe(data => {
+      this.productos = data;
+    });
+  }
 
   get total(): number {
-    return this.productos.reduce((acc, p) => acc + p.precio * p.cantidad, 0);
+    return this.carritoService.getTotal();
   }
 
   eliminarProducto(index: number) {
-    this.productos.splice(index, 1);
+    this.carritoService.eliminarProducto(index);
   }
 
   vaciarCarrito() {
-    this.productos = [];
+    this.carritoService.vaciarCarrito();
+  }
+
+  actualizarTotal() {
+    // Forzar detección de cambios o simplemente recargar los productos
+    this.productos = [...this.productos];
   }
 }

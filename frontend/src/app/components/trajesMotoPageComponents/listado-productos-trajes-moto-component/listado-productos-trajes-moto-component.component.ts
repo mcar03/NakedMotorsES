@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { CarritoService } from 'src/app/services/carrito-service.service';
 import { ServiProductoService } from 'src/app/services/servi-producto.service';
 
 export interface Producto {
@@ -24,7 +26,20 @@ export class ListadoProductosTrajesMotoComponentComponent {
    productos: Producto[] = [];
       productosPorCategoria: { [categoria: string]: Producto[] } = {};
     
-      constructor(private productoService: ServiProductoService) {}
+      constructor(private productoService: ServiProductoService,private carritoService: CarritoService,private snackBar: MatSnackBar) {}
+      
+        annadirAlCarrito(producto: any) {
+          this.carritoService.añadirProducto({
+            nombre: producto.nombre,
+            precio: producto.precio,
+            imagenurl: producto.imagenurl,
+            cantidad: 1
+          });
+          this.snackBar.open(`${producto.nombre} añadido al carrito`, 'Cerrar', {
+            duration: 2500,
+            panelClass: ['snackbar-success']
+          }); 
+        }
     
       ngOnInit(): void {
         this.productoService.obtenerProductos().subscribe(data => {

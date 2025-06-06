@@ -7,18 +7,21 @@
   
     <div *ngIf="productos.length > 0" class="productos-lista">
       <div *ngFor="let producto of productos; let i = index" class="producto-item">
-        <img [src]="producto.imagen" [alt]="producto.nombre" />
+        <img [src]="producto.imagenurl" [alt]="producto.nombre" />
         <div class="info">
           <h4>{{ producto.nombre }}</h4>
           <p>Precio: {{ producto.precio }} €</p>
-          <p>Cantidad: {{ producto.cantidad }}</p>
+          <label>
+            Cantidad:
+            <input type="number" [(ngModel)]="producto.cantidad" min="1" (change)="actualizarTotal()" style="width: 60px;" />
+          </label>
           <p>Subtotal: {{ producto.precio * producto.cantidad }} €</p>
           <button (click)="eliminarProducto(i)">Eliminar</button>
         </div>
       </div>
   
       <div class="resumen">
-        <h3>Total: {{ total }} €</h3>
+        <h3>Total: {{ total | number:'1.2-2'}} €</h3>
         <button (click)="vaciarCarrito()">Vaciar Carrito</button>
         <button class="btn-comprar">Proceder al Pago</button>
       </div>

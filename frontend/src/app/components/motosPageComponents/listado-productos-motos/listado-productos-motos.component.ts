@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { CarritoService } from 'src/app/services/carrito-service.service';
+import { LikeServiceService } from 'src/app/services/like-service.service';
 import { ServiProductoService } from 'src/app/services/servi-producto.service';
 
 export interface Producto {
@@ -26,7 +27,7 @@ export class ListadoProductosMotosComponent implements OnInit {
   productos: Producto[] = [];
   productosPorCategoria: { [categoria: string]: Producto[] } = {};
 
-  constructor(private productoService: ServiProductoService,private carritoService: CarritoService,private snackBar: MatSnackBar) {}
+  constructor(private productoService: ServiProductoService,private carritoService: CarritoService,private snackBar: MatSnackBar, private likeService: LikeServiceService) {}
     
       
   
@@ -56,9 +57,15 @@ export class ListadoProductosMotosComponent implements OnInit {
 ngOnInit(): void {
   this.productoService.obtenerProductos().subscribe(productos => {
     this.productos = productos.filter(p => p.categoriaNombre === 'Motos');
-    console.log('Productos filtrados:', this.productos);
-    this.organizarPorCategoria();
-    console.log('Productos por categoría:', this.productosPorCategoria);
+    this.productoService.obtenerLikesUsuario().subscribe(likes => {
+      const likedIds = new Set(likes.map(l => l.producto.id));
+      this.productos = this.productos.map(p => ({ ...p, liked: likedIds.has(p.id) }));
+      this.organizarPorCategoria();
+
+      // Actualizar el LikeService con los productos liked
+      const likedProductos = this.productos.filter(p => p.liked);
+      this.likeService.setLikes(likedProductos);
+    });
   });
 }
 
@@ -77,14 +84,18 @@ ngOnInit(): void {
     return Object.keys(this.productosPorCategoria);
   }
 
-  toggleLike(producto: Producto): void {
+ toggleLike(producto: Producto): void {
   this.productoService.toggleLike(producto.id).subscribe({
     next: (nuevoEstado: boolean) => {
       producto.liked = nuevoEstado;
+      if (nuevoEstado) {
+        this.likeService.addLike(producto);
+      } else {
+        this.likeService.removeLike(producto);
+      }
     },
     error: (err) => {
       console.error('Error toggle like:', err);
-      
     }
   });
 }

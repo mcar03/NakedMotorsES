@@ -10,7 +10,7 @@
     <div class="producto-card" *ngFor="let producto of productosPorCategoria[categoria]">
       <img [src]="producto.imagenurl" [alt]="producto.nombre" />
       <h3>{{ producto.nombre }}</h3>
-      <p class="precio">{{ producto.precio | currency:'EUR' }}</p>
+      <p class="precio">{{ producto.precio| currency:'EUR' }}</p>
 
       <div class="botones-producto">
         <button class="btn-comprar" (click)="annadirAlCarrito(producto)">Añadir al carrito</button>

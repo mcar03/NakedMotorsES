@@ -48,6 +48,7 @@ import { ListadoProductosRuedasComponentComponent } from './components/ruedasPag
 import { ListadoProductosTrajesMotoComponentComponent } from './components/trajesMotoPageComponents/listado-productos-trajes-moto-component/listado-productos-trajes-moto-component.component';
 
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { LikePageComponent } from './pages/like-page/like-page.component';
 
 
 
@@ -87,6 +88,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     ListadoProductosGuantesComponentComponent,
     ListadoProductosRuedasComponentComponent,
     ListadoProductosTrajesMotoComponentComponent,
+    LikePageComponent,
     
     
     

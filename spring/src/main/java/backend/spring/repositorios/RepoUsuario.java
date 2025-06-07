@@ -11,6 +11,6 @@ import backend.spring.modelos.Usuario;
 @Repository
 public interface RepoUsuario extends JpaRepository<Usuario, Long> {
 
-    List<Usuario> findByUsername(String username);
-    List<Usuario> findByEmail(String email);
+     Optional<Usuario> findByEmail(String email);
+    Optional<Usuario> findByUsername(String username);
 }

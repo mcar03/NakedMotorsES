@@ -43,14 +43,24 @@ export class ListadoProductosMotosComponent implements OnInit {
       }); 
     }
 
-  ngOnInit(): void {
-    this.productoService.obtenerProductos().subscribe(data => {
-      this.productos = data
-        .filter(p => p.categoriaNombre === 'Motos')
-        .map(p => ({ ...p, liked: false }));
-      this.organizarPorCategoria();
-    });
-  }
+//  ngOnInit(): void {
+//   this.productoService.obtenerProductos().subscribe(productos => {
+//     this.productos = productos.filter(p => p.categoriaNombre === 'Motos');
+//     this.productoService.obtenerLikesUsuario().subscribe(likes => {
+//       const likedIds = new Set(likes.map(l => l.producto.id));
+//       this.productos = this.productos.map(p => ({ ...p, liked: likedIds.has(p.id) }));
+//       this.organizarPorCategoria();
+//     });
+//   });
+// }
+ngOnInit(): void {
+  this.productoService.obtenerProductos().subscribe(productos => {
+    this.productos = productos.filter(p => p.categoriaNombre === 'Motos');
+    console.log('Productos filtrados:', this.productos);
+    this.organizarPorCategoria();
+    console.log('Productos por categoría:', this.productosPorCategoria);
+  });
+}
 
   organizarPorCategoria(): void {
     this.productosPorCategoria = {};
@@ -68,6 +78,14 @@ export class ListadoProductosMotosComponent implements OnInit {
   }
 
   toggleLike(producto: Producto): void {
-    producto.liked = !producto.liked;
-  }
+  this.productoService.toggleLike(producto.id).subscribe({
+    next: (nuevoEstado: boolean) => {
+      producto.liked = nuevoEstado;
+    },
+    error: (err) => {
+      console.error('Error toggle like:', err);
+      
+    }
+  });
+}
 }

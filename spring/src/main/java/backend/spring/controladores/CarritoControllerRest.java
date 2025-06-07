@@ -30,10 +30,11 @@ public class CarritoControllerRest {
     @Autowired private RepoLineaPedido repoLineaPedido;
 
     private Usuario getLoggedUser() {
-        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        String username = authentication.getName();
-        return repoUsuario.findByUsername(username).get(0);
-    }
+    Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+    String username = authentication.getName();
+    return repoUsuario.findByUsername(username)
+        .orElseThrow(() -> new RuntimeException("Usuario no encontrado"));
+}
 
     @GetMapping("/productos")
     public List<Producto> getProductosDisponibles() {

@@ -34,4 +34,6 @@ export class CarritoPageComponent implements OnInit {
     // Forzar detección de cambios o simplemente recargar los productos
     this.productos = [...this.productos];
   }
+
+  
 }

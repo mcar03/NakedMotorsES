@@ -49,14 +49,11 @@ public class ControUsuario {
      * Devuelve un objeto de tipo Usuario que es además quien ha entrado en la aplicación.
      * @return Usuario 
      */
-    private Usuario getLoggedUser() {
-        // Del contexto de la aplicación obtenemos el usuario
-        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        String username = authentication.getName();
-        // obtenemos el usuario del repositorio por su "username"
-        Usuario cliente = repoUsuario.findByUsername(username).get(0);
-
-        return cliente;
+   private Usuario getLoggedUser() {
+    Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+    String username = authentication.getName();
+    return repoUsuario.findByUsername(username)
+            .orElseThrow(() -> new RuntimeException("Usuario no encontrado"));
     }
 
     

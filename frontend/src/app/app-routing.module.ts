@@ -13,6 +13,7 @@ import { RegisterPageComponent } from './pages/register-page/register-page.compo
 import { RuedasPageComponent } from './pages/ruedas-page/ruedas-page.component';
 import { TrajesMotoPageComponent } from './pages/trajes-moto-page/trajes-moto-page.component';
 import { SobreNosotrosPageComponent } from './pages/sobre-nosotros-page/sobre-nosotros-page.component';
+import { LikePageComponent } from './pages/like-page/like-page.component';
 
 const routes: Routes = [
   {path: "", component: HomePageComponent},
@@ -27,7 +28,8 @@ const routes: Routes = [
   {path: "register", component: RegisterPageComponent},
   {path: "ruedas", component: RuedasPageComponent},
   {path: "trajes-moto", component: TrajesMotoPageComponent},
-  {path: "sobreNosotros", component: SobreNosotrosPageComponent}
+  {path: "sobreNosotros", component: SobreNosotrosPageComponent},
+  {path: "mis-likes", component: LikePageComponent}
 ];
 
 @NgModule({

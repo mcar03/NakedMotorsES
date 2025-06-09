@@ -62,17 +62,15 @@ import backend.spring.jwt.AuthTokenFilter;
                     .csrf(csrf -> csrf.disable())
                     .authorizeHttpRequests((requests) -> requests // 👈 API pública para pruebas
                                     .requestMatchers("/webjars/**", "/img/**", "/js/**",
-                                            "/register/**", "/ayuda/**", "/auth/**", "/codpos/**",
-                                            "/denegado", "/error", "/acerca", "/categoria", "/productos")
+                                           "/ayuda/**", "/auth/**", "/error", "/api/productos", "/api/productos/**")
                                     .permitAll()
-                                    .requestMatchers("/admin/**", "/admin/*/**", "/admin/*/*/**", "/admin/*/*/*/*/*/**")
+                                    .requestMatchers("/api/carro/", "/api/carro/**", "/mis-datos", "/mis-datos/**")
+                                    .authenticated()
+                                    .requestMatchers("/admin/**", "/admin", "/api/pedidos", "/api/usuarios", "/api/usuarios/**")
                                     .hasAuthority("GESTOR")
                                     .requestMatchers("/api/pedidos/**", "/api/pedidos")
                                     .hasAuthority("OPERARIO")
-                                    .requestMatchers("/api/likes/**", "/api/likes", "/mis-pedidos/**", "/mis-pedidos/*/**",
-                                            "/productos/**", "/productos/*/**",
-                                            "/mis-datos/**", "/mis-datos/*/**", "/mis-datos/*/*/**", "/mis-datos/*/*/*/**",
-                                            "/carro/**", "/carro/*/**")
+                                    .requestMatchers("/api/likes/**", "/api/likes", "/mis-pedidos/**", "/mis-pedidos/*/**")
                                     .hasAuthority("CLIENTE")
                     )
                     .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))

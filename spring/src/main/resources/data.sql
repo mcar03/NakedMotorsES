@@ -1,3 +1,17 @@
+INSERT INTO `usuario` (`apellido`, `email`, `enabled`, `nombre`, `password`, `username`) VALUES ('Administrador', 'admin@sincorreo.com', 1, 'Pepe', '$2a$10$JdTDI22BygL/kxl4jR4zGeeLAhU2xafTlZrtfWki/4xm5TXg5qc.q', 'admin');
+INSERT INTO `rol_usuario` (`usuario_id`, `rol`) VALUES (1, 'GESTOR');
+
+INSERT INTO `usuario` (`apellido`, `email`, `enabled`, `nombre`, `password`, `username`) VALUES ('Cliente', 'cliente@sincorreo.com', 1, 'Pepe', '$2a$10$JdTDI22BygL/kxl4jR4zGeeLAhU2xafTlZrtfWki/4xm5TXg5qc.q', 'cliente');
+INSERT INTO `rol_usuario` (`usuario_id`, `rol`) VALUES (2, 'CLIENTE');
+
+INSERT INTO `usuario` (`apellido`, `email`, `enabled`, `nombre`, `password`, `username`) VALUES ('Operador', 'operario@sincorreo.com', 1, 'Pepe', '$2a$10$JdTDI22BygL/kxl4jR4zGeeLAhU2xafTlZrtfWki/4xm5TXg5qc.q', 'operario');
+INSERT INTO `rol_usuario` (`usuario_id`, `rol`) VALUES (3, 'OPERARIO');
+
+
+INSERT INTO `usuario` (`enabled`, `apellido`, `email`, `nombre`, `password`, `username`) VALUES (CONV('1', 2, 10) + 0, 'Sin Miedo', 'juan@sinmiedo.com', 'Juan', '$2a$10$tSfE7JRWtnTvR1AHyFxI1.Xparjm/BFht4HLXhzjo/OdBUHwxaWo2', 'juanito');
+INSERT INTO `rol_usuario` (`usuario_id`, `rol`) VALUES (4, 'CLIENTE');
+
+
 INSERT INTO categoria (nombre, descripcion, padre_id) VALUES ('Monos', 'Monos motociclismo tanto tierra como carretera', NULL);
 INSERT INTO categoria (nombre, descripcion, padre_id) VALUES ('Guantes', 'Guantes preparados para nuestra pasión', NULL);
 INSERT INTO categoria (nombre, descripcion, padre_id) VALUES ('Cascos', 'Cascos de motociclismo homologados', NULL);
@@ -14702,20 +14716,5 @@ INSERT INTO codigo_postal (codigo_postal,municipio, pais) VALUES ("52003", "Meli
 INSERT INTO codigo_postal (codigo_postal,municipio, pais) VALUES ("52004", "Melilla", "España");
 INSERT INTO codigo_postal (codigo_postal,municipio, pais) VALUES ("52005", "Melilla", "España");
 INSERT INTO codigo_postal (codigo_postal,municipio, pais) VALUES ("52006", "Melilla", "España");
-
-
-INSERT INTO `usuario` (`apellido`, `email`, `enabled`, `nombre`, `password`, `username`) VALUES ('Administrador', 'admin@sincorreo.com', 1, 'Pepe', '$2a$10$JdTDI22BygL/kxl4jR4zGeeLAhU2xafTlZrtfWki/4xm5TXg5qc.q', 'admin');
-INSERT INTO `rol_usuario` (`usuario_id`, `rol`) VALUES (1, 'GESTOR');
-
-INSERT INTO `usuario` (`apellido`, `email`, `enabled`, `nombre`, `password`, `username`) VALUES ('Cliente', 'cliente@sincorreo.com', 1, 'Pepe', '$2a$10$JdTDI22BygL/kxl4jR4zGeeLAhU2xafTlZrtfWki/4xm5TXg5qc.q', 'cliente');
-INSERT INTO `rol_usuario` (`usuario_id`, `rol`) VALUES (2, 'CLIENTE');
-
-INSERT INTO `usuario` (`apellido`, `email`, `enabled`, `nombre`, `password`, `username`) VALUES ('Operador', 'operario@sincorreo.com', 1, 'Pepe', '$2a$10$JdTDI22BygL/kxl4jR4zGeeLAhU2xafTlZrtfWki/4xm5TXg5qc.q', 'operario');
-INSERT INTO `rol_usuario` (`usuario_id`, `rol`) VALUES (3, 'OPERARIO');
-
-
-INSERT INTO `usuario` (`enabled`, `apellido`, `email`, `nombre`, `password`, `username`) VALUES (CONV('1', 2, 10) + 0, 'Sin Miedo', 'juan@sinmiedo.com', 'Juan', '$2a$10$tSfE7JRWtnTvR1AHyFxI1.Xparjm/BFht4HLXhzjo/OdBUHwxaWo2', 'juanito');
-INSERT INTO `rol_usuario` (`usuario_id`, `rol`) VALUES (4, 'CLIENTE');
-
 
 

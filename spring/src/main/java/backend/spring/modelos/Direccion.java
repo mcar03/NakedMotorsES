@@ -1,6 +1,5 @@
 package backend.spring.modelos;
 
-import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -17,20 +16,13 @@ public class Direccion {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String tipoVia;
-    private String nombreVia;
     private String numero;
     private String planta;
     private String puerta;
     private String portal;
     private String nombre;
-    @ManyToOne    
-    private CodigoPostal codigoPostal;
     @ManyToOne
     private Usuario usuario;
-    public Object getProvincia() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getProvincia'");
-    }
 }
 
 

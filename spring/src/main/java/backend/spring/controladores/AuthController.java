@@ -48,7 +48,6 @@ public class AuthController {
     public ResponseEntity<?> login(@RequestBody LoginRequest request) {
         Authentication authentication;
         try {
-            System.out.printf("%s username, %s password\n", request.getUsername(), request.getPassword());
             authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(request.getUsername(), request.getPassword()));
         } catch (AuthenticationException e) {
             Map<String, Object> map = new HashMap<>();

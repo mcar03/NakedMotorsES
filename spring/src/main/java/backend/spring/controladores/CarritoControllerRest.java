@@ -2,20 +2,20 @@ package backend.spring.controladores;
 
 import java.time.LocalDate;
 import java.util.List;
-import java.util.Optional;
-
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.lang.NonNull;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
 import jakarta.transaction.Transactional;
-
+import jakarta.validation.Valid;
 import backend.spring.excepciones.CarroException;
+import backend.spring.modelos.CantidadDTO;
 import backend.spring.modelos.Estado;
 import backend.spring.modelos.LineaPedido;
+import backend.spring.modelos.LineaPedidoDTO;
 import backend.spring.modelos.Pedido;
+import backend.spring.modelos.PedidoDTO;
 import backend.spring.modelos.Producto;
 import backend.spring.modelos.Usuario;
 import backend.spring.repositorios.*;
@@ -36,26 +36,21 @@ public class CarritoControllerRest {
         .orElseThrow(() -> new RuntimeException("Usuario no encontrado"));
 }
 
-    @GetMapping("/productos")
-    public List<Producto> getProductosDisponibles() {
-        List<Producto> productos = repoProducto.findAll();
-        productos.removeIf(p -> p.getStock() == 0);
-        return productos;
-    }
-
-    @GetMapping
-    public List<LineaPedido> getCarro() {
+    @GetMapping("")
+    public List<LineaPedidoDTO> getCarro() {
         Usuario cliente = getLoggedUser();
         List<Pedido> pedidos = repoPedido.findByEstadoAndCliente(Estado.CARRITO, cliente);
-        return pedidos.isEmpty() ? List.of() : repoLineaPedido.findByPedido(pedidos.get(0));
+        return pedidos.isEmpty() ? List.of() : LineaPedidoDTO.toListDTO(repoLineaPedido.findByPedido(pedidos.get(0)));
     }
 
     @PostMapping("/add/{id}")
-    public LineaPedido addProducto(@PathVariable Long id, @RequestParam Integer cantidad) {
+    public LineaPedidoDTO addProducto(@PathVariable Long id, @Valid @RequestBody CantidadDTO cantidadDto) {
         Usuario cliente = getLoggedUser();
         Producto producto = repoProducto.findById(id).orElseThrow(() -> new RuntimeException("Producto no encontrado"));
 
-        if (cantidad <= 0) throw new RuntimeException("Cantidad inválida");
+        int cantidad = cantidadDto.getCantidad();
+
+        //if (cantidad <= 0) throw new RuntimeException("Cantidad inválida");
 
         Pedido carrito = repoPedido.findByEstadoAndCliente(Estado.CARRITO, cliente)
                 .stream().findFirst().orElseGet(() -> {
@@ -79,12 +74,15 @@ public class CarritoControllerRest {
         linea.setProducto(producto);
         linea.setCantidad(nuevaCantidad);
         linea.setPedido(carrito);
+        linea.setPrecio(producto.getPrecio());
 
-        return repoLineaPedido.save(linea);
+        LineaPedido newPedido = repoLineaPedido.save(linea);
+        return new LineaPedidoDTO(newPedido);
     }
 
     @PutMapping("/edit/{id}")
-    public LineaPedido editarCantidad(@PathVariable Long id, @RequestParam Integer cantidad) {
+    public LineaPedidoDTO editarCantidad(@PathVariable Long id, @Valid @RequestBody CantidadDTO cantidadDto) {
+        int cantidad = cantidadDto.getCantidad();
         Usuario cliente = getLoggedUser();
         LineaPedido linea = repoLineaPedido.findById(id)
                 .orElseThrow(() -> new RuntimeException("LineaPedido no encontrada"));
@@ -92,7 +90,7 @@ public class CarritoControllerRest {
         if (!repoLineaPedido.lineaPedidoBelongsToUser(linea, cliente).isEmpty()
                 && linea.getProducto().getStock() >= cantidad) {
             linea.setCantidad(cantidad);
-            return repoLineaPedido.save(linea);
+            return new LineaPedidoDTO(repoLineaPedido.save(linea));
         } else {
             throw new RuntimeException("Stock insuficiente o no autorizado");
         }
@@ -115,9 +113,9 @@ public class CarritoControllerRest {
         }
     }
 
-    @PostMapping("/confirmar")
+    @PostMapping("/confirmar/{pedidoId}")
     @Transactional(rollbackOn = CarroException.class)
-    public Pedido confirmarPedido(@RequestParam Long pedidoId) throws CarroException {
+    public PedidoDTO confirmarPedido(@PathVariable Long pedidoId) throws CarroException {
         Usuario cliente = getLoggedUser();
         Pedido pedido = repoPedido.findById(pedidoId)
                 .orElseThrow(() -> new RuntimeException("Pedido no encontrado"));
@@ -142,23 +140,25 @@ public class CarritoControllerRest {
         pedido.setEstado(Estado.REALIZADO);
         pedido.setFecha(LocalDate.now());
         pedido.setTotal(total);
-        return repoPedido.save(pedido);
+        pedido.setDireccion(cliente.getDirecciones().get(0));
+        pedido.setTelefono(cliente.getTelefonos().get(0));
+        return new PedidoDTO(repoPedido.save(pedido));
     }
 
     @GetMapping("/pedidos")
-    public List<Pedido> getPedidosRealizados() {
+    public List<PedidoDTO> getPedidosRealizados() {
         List<Pedido> pedidos = repoPedido.findByCliente(getLoggedUser());
         pedidos.removeIf(p -> p.getEstado() == Estado.CARRITO);
-        return pedidos;
+        return PedidoDTO.toListDTO(pedidos);
     }
 
     @GetMapping("/pedidos/{id}")
-    public Pedido detallePedido(@PathVariable Long id) {
+    public PedidoDTO detallePedido(@PathVariable Long id) {
         Pedido pedido = repoPedido.findById(id)
                 .orElseThrow(() -> new RuntimeException("Pedido no encontrado"));
         if (!pedido.getCliente().equals(getLoggedUser())) {
             throw new RuntimeException("No autorizado para ver este pedido");
         }
-        return pedido;
+        return new PedidoDTO(pedido);
     }
 }

@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import backend.spring.modelos.ProductoDTO;
-import backend.spring.repositorios.RepoCategoria;
 import backend.spring.repositorios.RepoProducto;
 
 @RestController
@@ -29,7 +28,7 @@ public class ProductoRestController {
                 .toList();
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/delete/{id}")
     public ResponseEntity<Void> eliminarProducto(@PathVariable Long id) {
         if (!repoProducto.existsById(id)) {
             return ResponseEntity.notFound().build();

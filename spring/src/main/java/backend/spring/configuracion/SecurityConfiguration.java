@@ -60,17 +60,16 @@ import backend.spring.jwt.AuthTokenFilter;
             return http
                     .cors(cors -> cors.disable())
                     .csrf(csrf -> csrf.disable())
-                    .authorizeHttpRequests((requests) -> requests // 👈 API pública para pruebas
+                    .authorizeHttpRequests((requests) -> requests
                                     .requestMatchers("/webjars/**", "/img/**", "/js/**",
-                                           "/ayuda/**", "/auth/**", "/error", "/api/productos", "/api/productos/**")
+                                           "/auth/**", "/error", "/api/productos")
                                     .permitAll()
-                                    .requestMatchers("/api/carro/", "/api/carro/**", "/mis-datos", "/mis-datos/**")
+                                    .requestMatchers("/api/carro/", "/api/carro/**")
                                     .authenticated()
-                                    .requestMatchers("/admin/**", "/admin", "/api/pedidos", "/api/usuarios", "/api/usuarios/**")
+                                    .requestMatchers("/admin/**", "/admin", "/api/pedidos", "/api/pedidos/**", 
+                                        "/api/usuarios", "/api/usuarios/**", "/api/productos/**")
                                     .hasAuthority("GESTOR")
-                                    .requestMatchers("/api/pedidos/**", "/api/pedidos")
-                                    .hasAuthority("OPERARIO")
-                                    .requestMatchers("/api/likes/**", "/api/likes", "/mis-pedidos/**", "/mis-pedidos/*/**")
+                                    .requestMatchers("/api/likes/**", "/api/likes")
                                     .hasAuthority("CLIENTE")
                     )
                     .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))

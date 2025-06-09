@@ -5,11 +5,15 @@ INSERT INTO `usuario` (`apellido`, `email`, `enabled`, `nombre`, `password`, `us
 INSERT INTO `rol_usuario` (`usuario_id`, `rol`) VALUES (2, 'CLIENTE');
 
 INSERT INTO `usuario` (`apellido`, `email`, `enabled`, `nombre`, `password`, `username`) VALUES ('Operador', 'operario@sincorreo.com', 1, 'Pepe', '$2a$10$JdTDI22BygL/kxl4jR4zGeeLAhU2xafTlZrtfWki/4xm5TXg5qc.q', 'operario');
-INSERT INTO `rol_usuario` (`usuario_id`, `rol`) VALUES (3, 'OPERARIO');
+INSERT INTO `rol_usuario` (`usuario_id`, `rol`) VALUES (3, 'GESTOR');
 
 
 INSERT INTO `usuario` (`enabled`, `apellido`, `email`, `nombre`, `password`, `username`) VALUES (CONV('1', 2, 10) + 0, 'Sin Miedo', 'juan@sinmiedo.com', 'Juan', '$2a$10$tSfE7JRWtnTvR1AHyFxI1.Xparjm/BFht4HLXhzjo/OdBUHwxaWo2', 'juanito');
 INSERT INTO `rol_usuario` (`usuario_id`, `rol`) VALUES (4, 'CLIENTE');
+
+INSERT INTO `direccion` (`usuario_id`, `nombre`, `numero`, `planta`, `puerta`, `tipo_via`) VALUES (2, 'Calle Linares', '5', '1', '2', 'calle');
+
+INSERT INTO `telefono` (`numero`, `usuario_id`, `nombre`, `codigo_pais`) VALUES ('612345678', '2', 'Movil personal', '34');
 
 
 INSERT INTO categoria (nombre, descripcion, padre_id) VALUES ('Monos', 'Monos motociclismo tanto tierra como carretera', NULL);

@@ -4,15 +4,19 @@ import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.validation.FieldError;
+import org.springframework.web.ErrorResponse;
+import org.springframework.web.HttpRequestMethodNotSupportedException;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
-import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.resource.NoResourceFoundException;
 
 import backend.spring.excepciones.CarroException;
 
@@ -58,6 +62,39 @@ import backend.spring.excepciones.CarroException;
         error.put("status", "error");
         error.put("message", "JSON mal formado o tipo de dato incorrecto");
         return ResponseEntity.badRequest().body(error);
+    }
+
+    @ExceptionHandler(RuntimeException.class)
+    public ResponseEntity<Map<String, Object>> handleRuntimeException(RuntimeException e) {
+        Map<String, Object> error = new HashMap<>();
+        error.put("status", "error");
+        error.put("message", e.getMessage());
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(error);
+    }
+
+    @ExceptionHandler(HttpRequestMethodNotSupportedException.class)
+    public ResponseEntity<Map<String, Object>> handleMethodNotSupportedException(HttpRequestMethodNotSupportedException e) {
+        Map<String, Object> error = new HashMap<>();
+        Pattern pattern = Pattern.compile("'(.*?)'");
+        Matcher matcher = pattern.matcher(e.getMessage());
+
+        if (matcher.find()) {
+            String method = matcher.group(0);
+
+            error.put("message", String.format("El método %s no está soportado", method));
+        } else {
+            error.put("message", "Método no soportado");
+        }
+        error.put("status", "error");
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(error);
+    }
+
+    @ExceptionHandler(NoResourceFoundException.class)
+    public ResponseEntity<Map<String, Object>> handleNoResourceFoundException(NoResourceFoundException e) {
+        Map<String, Object> error = new HashMap<>();
+        error.put("status", "error");
+        error.put("message", "El endpoint solicitado no existe");
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(error);
     }
  }
  

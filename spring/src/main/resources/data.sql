@@ -106,7 +106,7 @@ INSERT INTO producto (nombre, descripcion, precio, talla, categoria_id, stock, i
 ('Sidi Adventure 2', 'Botas trail con protección reforzada y membrana Gore-Tex.', 279.99, '43', 7, 4, 'https://m.media-amazon.com/images/I/514gDwhYXdL._AC_SY575_.jpg'),
 ('TCX Rush WP', 'Botas urbanas impermeables y ligeras.', 149.99, '42', 7, 10, 'https://m.media-amazon.com/images/I/71f3D3u5IZL._AC_SY606_.jpg');
 
-
+/*
 
 INSERT INTO codigo_postal (codigo_postal,municipio, pais) VALUES ("43", "Pobla de Massaluca, La", "España");
 INSERT INTO codigo_postal (codigo_postal,municipio, pais) VALUES ("85", "Fariza", "España");
@@ -14718,3 +14718,4 @@ INSERT INTO codigo_postal (codigo_postal,municipio, pais) VALUES ("52005", "Meli
 INSERT INTO codigo_postal (codigo_postal,municipio, pais) VALUES ("52006", "Melilla", "España");
 
 
+*/

@@ -1,9 +1,12 @@
 package backend.spring.jwt;
 
 import java.io.IOException;
+import java.util.Arrays;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -37,6 +40,10 @@ public class AuthTokenFilter extends OncePerRequestFilter {
 
                 UsernamePasswordAuthenticationToken auth = new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());
 
+                System.out.println("Token recibido: " + jwt);
+                System.out.println("Username extraído: " + username);
+                System.out.println("Authorities: " + userDetails.getAuthorities());
+
                 auth.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
 
                 SecurityContextHolder.getContext().setAuthentication(auth);
@@ -47,4 +54,5 @@ public class AuthTokenFilter extends OncePerRequestFilter {
         
         filterChain.doFilter(request, response);
     }
+    
 }

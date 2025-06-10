@@ -14,7 +14,7 @@ export interface Producto {
   precio: number;
   stock: number;
   imagenurl: string;
-  // liked?: boolean;
+  liked?: boolean;
   categoriaId: number;
   categoriaNombre: string;
 }
@@ -68,7 +68,7 @@ export class ListadoProductosGeneralComponent {
     this.paginaActual = pagina;
   }
 
-  // toggleLike(producto: Producto): void {
-  //   producto.liked = !producto.liked;
-  // }
+  toggleLike(producto: Producto): void {
+    producto.liked = !producto.liked;
+  }
 }

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { filter } from 'rxjs';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-login-page',
@@ -9,11 +10,15 @@ import { filter } from 'rxjs';
 })
 export class LoginPageComponent {
 
-  username: string = '';
+  user: string = '';
   password: string = '';
 
-  onLogin() {
-    console.log('Usuario:', this.username);
-    console.log('Contraseña:', this.password);
+  constructor(private authService: AuthService,private router: Router){}
+
+  login():void{
+    this.authService.login(this.user, this.password).subscribe({
+      next:() => this.router.navigate(["/"]),
+      error: (err) => console.error("Login failed", err)
+    })
   }
 }

@@ -109,6 +109,7 @@ import { LikePageComponent } from './pages/like-page/like-page.component';
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [
     { provide: NZ_ICONS, useValue: [UserOutline] }
+    
   ],
   bootstrap: [AppComponent]
 })

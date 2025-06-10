@@ -10,7 +10,7 @@ export interface Producto {
   precio: number;
   stock: number;
   imagenurl: string;
-  liked?: boolean;
+  // liked?: boolean;
   categoriaId: number;
   categoriaNombre: string;
 }

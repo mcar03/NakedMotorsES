@@ -2,6 +2,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap; 
   padding: 0 20px;
 }
 
@@ -16,21 +17,29 @@
 }
 .btn-redes-sociales {
   
-  border-radius: 80px;
-  margin: 4px;
-  width: 50px;
-  height: 50px;
-  margin-left: 10px;
+   border-radius: 80px;
+  width: 40px;
+  height: 40px;
   border: 2px solid rgb(29, 5, 95);
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: all 0.3s ease;
   
 }
+.redes-sociales {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+
 
 .btn-redes-sociales:hover {
-  filter: brightness(1.2); 
-  border-color: #ff4081;   
-  cursor: pointer;         
-  transform: scale(1.05);  
-  transition: all 0.3s ease;
+ filter: brightness(1.2);
+  border-color: #ff4081;
+  cursor: pointer;
+  transform: scale(1.05);
 }
 
 .instagram{
@@ -64,8 +73,9 @@ img{
 }
 
 .menu-container {
+  flex: 1;
   display: flex;
-  align-items: center;
+  justify-content: center;
 }
 
 .header-menu {

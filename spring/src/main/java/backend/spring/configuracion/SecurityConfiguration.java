@@ -58,7 +58,7 @@ import backend.spring.jwt.AuthTokenFilter;
         @Bean
         public SecurityFilterChain filter(HttpSecurity http) throws Exception {
             return http
-                    .cors(cors -> cors.disable())
+                    .cors(Customizer.withDefaults())
                     .csrf(csrf -> csrf.disable())
                     .authorizeHttpRequests((requests) -> requests
                                     .requestMatchers("/webjars/**", "/img/**", "/js/**",

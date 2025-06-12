@@ -10,13 +10,13 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class LoginPageComponent {
 
-  user: string = '';
+  username: string = '';
   password: string = '';
 
   constructor(private authService: AuthService,private router: Router){}
 
   login():void{
-    this.authService.login(this.user, this.password).subscribe({
+    this.authService.login(this.username, this.password).subscribe({
       next:() => this.router.navigate(["/"]),
       error: (err) => console.error("Login failed", err)
     })

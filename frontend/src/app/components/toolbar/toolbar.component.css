@@ -1,9 +1,11 @@
 .header {
-  display: flex;
+   display: flex;
   align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap; 
+  justify-content: center; 
+  gap: 30px; 
+  flex-wrap: wrap;
   padding: 0 20px;
+  text-align: center;
 }
 
 .logo {
@@ -28,9 +30,10 @@
   
 }
 .redes-sociales {
-  display: flex;
   align-items: center;
-  gap: 10px;
+  justify-content: center; 
+  
+  
 }
 
 
@@ -45,8 +48,10 @@
 .instagram{
   background-image: url("/assets/img/insta.png");
   background-size: 100%;
+  margin-top: 5px;
   background-position: center;
   background-repeat: no-repeat;
+ 
 }
 
 .facebook{
@@ -73,7 +78,6 @@ img{
 }
 
 .menu-container {
-  flex: 1;
   display: flex;
   justify-content: center;
 }

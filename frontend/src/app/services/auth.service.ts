@@ -11,8 +11,8 @@ private loginUrl = "http://localhost:8080/auth/login";
 private tokenKey = "authToken"
   constructor(private http: HttpClient, private router: Router) { }
 
-  login(user:string, password:string ):Observable<any>{
-    return this.http.post<any>(this.loginUrl, {user, password}).pipe(
+  login(username:string, password:string ):Observable<any>{
+    return this.http.post<any>(this.loginUrl, {username, password}).pipe(
       tap(response => {
         if(response.token){
           this.setToken(response.token);

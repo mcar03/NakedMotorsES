@@ -10,12 +10,12 @@ import { CarritoService, ProductoCarrito } from 'src/app/services/carrito-servic
 export class CarritoPageComponent implements OnInit {
   productos: ProductoCarrito[] = [];
 
-  constructor(private carritoService: CarritoService) {}
+  constructor(private carritoService: CarritoService) { }
 
   ngOnInit() {
     this.carritoService.getProductosCarrito(localStorage.getItem('token')).subscribe({
       next: (data) => {
-        console.log('DATA ' ,data);
+        console.log('DATA ', data);
         this.productos = data;
       }
     })
@@ -30,7 +30,7 @@ export class CarritoPageComponent implements OnInit {
 
   eliminarProducto(index: any) {
     console.log(index)
-    this.carritoService.eliminarProducto(index,localStorage.getItem('token'));
+    this.carritoService.eliminarProducto(index, localStorage.getItem('token'));
 
   }
 
@@ -42,10 +42,10 @@ export class CarritoPageComponent implements OnInit {
     // Forzar detección de cambios o simplemente recargar los productos
     this.productos = [...this.productos];
   }
-  comprarProducto(){
+  comprarProducto() {
     const totalUnidades = this.productos.reduce((total, producto) => {
-        this.carritoService.eliminarStock(producto.id!,localStorage.getItem('token'),producto.cantidad);
-      return total + (producto.cantidad || 0);
+      this.carritoService.eliminarStock(producto.productoId!, localStorage.getItem('token'), producto.cantidad);
+      this.carritoService.eliminarProducto(producto.id!, localStorage.getItem('token')); return total + (producto.cantidad || 0);
     }, 0);
 
     console.log('Total de unidades compradas:', totalUnidades);
@@ -53,5 +53,5 @@ export class CarritoPageComponent implements OnInit {
 
   }
 
-  
+
 }

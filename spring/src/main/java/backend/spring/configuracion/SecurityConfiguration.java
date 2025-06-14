@@ -60,14 +60,14 @@ import backend.spring.jwt.AuthTokenFilter;
             return http
                     .cors(Customizer.withDefaults())
                     .csrf(csrf -> csrf.disable())
-                    .authorizeHttpRequests((requests) -> requests
+                     .authorizeHttpRequests((requests) -> requests
                                     .requestMatchers("/webjars/**", "/img/**", "/js/**",
                                            "/auth/**", "/error", "/api/productos")
                                     .permitAll()
-                                    .requestMatchers("/api/carro/", "/api/carro/**")
+                                    .requestMatchers("/api/carro/", "/api/carro/**", "/api/productos/delete-stock/**")
                                     .authenticated()
                                     .requestMatchers("/admin/**", "/admin", "/api/pedidos", "/api/pedidos/**", 
-                                        "/api/usuarios", "/api/usuarios/**", "/api/productos/**")
+                                        "/api/usuarios", "/api/usuarios/**", "/api/productos/delete/**")
                                     .hasAuthority("GESTOR")
                                     .requestMatchers("/api/likes/**", "/api/likes")
                                     .hasAuthority("CLIENTE")

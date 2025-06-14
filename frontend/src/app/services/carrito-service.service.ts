@@ -1,5 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
 
 export interface ProductoCarrito {
@@ -7,6 +9,7 @@ export interface ProductoCarrito {
   id ?: number;
   precio: number;
   cantidad: number;
+  productoId?: number;
   imagenurl: string;
 }
 
@@ -18,7 +21,7 @@ export class CarritoService {
   private productosSubject = new BehaviorSubject<ProductoCarrito[]>([]);
 
   productos$ = this.productosSubject.asObservable();
-  constructor(private http: HttpClient){}
+  constructor(private http: HttpClient,private snackService : MatSnackBar, private route: Router){}
 
   añadirProducto(producto: ProductoCarrito,token:any) {
     const index = this.productos.findIndex(p => p.nombre === producto.nombre);
@@ -44,12 +47,18 @@ export class CarritoService {
   eliminarProducto(index: number,token:any) {
     this.productos.splice(index, 1);
     this.productosSubject.next([...this.productos]);
-    this.deleteProductosCarrito(index,token).subscribe(() => window.location.reload());
+    this.deleteProductosCarrito(index,token).subscribe(() => {
+      this.snackService.open("Su compra se ha realizado con exito", 'Cerrar',{
+        duration: 2500,
+        panelClass: ['snackbar-success']
+      });
+      this.route.navigate(["/"]);
+    });
   }
 
   
   eliminarStock(index: number,token:any,cantidad:number) {
-    this.deleteProductosStock(index,token,cantidad).subscribe(() => window.location.reload());
+    this.deleteProductosStock(index,token,cantidad).subscribe(() => {});
   }
 
 

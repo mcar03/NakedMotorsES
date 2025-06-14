@@ -28,6 +28,7 @@ export class ListadoProductosCascosComponentComponent {
   productosPorCategoria: { [categoria: string]: Producto[] } = {};
   isLogin: boolean = false;
   roleUser: string = '';
+  productLikes ?: any[];
 
   constructor(
     private productoService: ServiProductoService, 
@@ -91,6 +92,11 @@ export class ListadoProductosCascosComponentComponent {
 
   toggleLike(producto: Producto): void {
     this.canLikeProduct();
+    console.log('producto ' ,producto.id)
+    console.log(localStorage.getItem('token'))
+    this.productoService.toggleLike(producto.id, localStorage.getItem('token')).subscribe((data) => {
+      this.productLikes = data;
+    })
     producto.liked = !producto.liked;
   }
 }

@@ -34,6 +34,7 @@ export class ListadoProductosGeneralComponent {
   productosPorPagina = 5;
   isLogin: boolean = false;
   roleUser: string = ''
+  productLikes ?: any[];
 
   constructor(
     private productoService: ServiProductoService,
@@ -92,6 +93,11 @@ export class ListadoProductosGeneralComponent {
 
   toggleLike(producto: Producto): void {
     this.canLikeProduct();
+    console.log('producto ' ,producto.id)
+    console.log(localStorage.getItem('token'))
+    this.productoService.toggleLike(producto.id, localStorage.getItem('token')).subscribe((data) => {
+      this.productLikes = data;
+    })
     producto.liked = !producto.liked;
   }
 }

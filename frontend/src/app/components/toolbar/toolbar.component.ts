@@ -12,10 +12,28 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class ToolbarComponent {
 
-  constructor(private authService: AuthService,private router: Router){}
-  
-    logout():void{
-     this.authService.logout()
+  isLogin: boolean = false;
+  roleUser: string = ''
+
+  constructor(private authService: AuthService,private router: Router){
+    if(localStorage.getItem('token')){
+      this.isLogin = true
     }
+    if(localStorage.getItem('roles')){
+      this.roleUser = localStorage.getItem('roles')!;
+    }
+  }
+
+  canLikeProduct():void {
+    if(!this.isLogin){
+      this.router.navigate(["/login"]);
+    }
+  }
+  
+  logout():void{
+    localStorage.clear();
+    this.isLogin = false
+    this.authService.logout()
+  }
  
 }

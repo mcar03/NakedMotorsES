@@ -29,7 +29,7 @@ const routes: Routes = [
   {path: "ruedas", component: RuedasPageComponent},
   {path: "trajes-moto", component: TrajesMotoPageComponent},
   {path: "sobreNosotros", component: SobreNosotrosPageComponent},
-  {path: "mis-likes", component: LikePageComponent}
+  {path: "mis-likes", component: LikePageComponent},
 ];
 
 @NgModule({

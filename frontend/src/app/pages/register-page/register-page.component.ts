@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-register-page',
@@ -14,13 +16,27 @@ export class RegisterPageComponent {
   username = '';
   password = '';
 
-  onRegister() {
-    console.log('Nombre:', this.firstName);
-    console.log('Apellido:', this.lastName);
-    console.log('Email:', this.email);
-    console.log('Usuario:', this.username);
-    console.log('Contraseña:', this.password);
-    // Aquí podrías enviar los datos a tu servicio de backend o Firebase
-  
+  constructor(
+    private authService: AuthService,
+    private router: Router
+  ){
+
+  }
+
+  onRegister(): void {
+    console.log('HOLA PACO')
+    this.authService.register(
+      {
+        nombre: this.firstName,
+        apellido: this.lastName,
+        email: this.email,
+        username: this.username,
+        password: this.password
+      }
+    ).subscribe({
+      next: (data) => {
+        this.router.navigate(["/login"]);
+      }
+    })
   }
 }

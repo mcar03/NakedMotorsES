@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
@@ -34,8 +34,13 @@ export class ServiProductoService {
   return this.http.delete(`http://localhost:8080/api/productos/${id}`);
 }
 
-toggleLike(productoId: number): Observable<boolean> {
-  return this.http.post<boolean>(`http://localhost:8080/api/likes/${productoId}/toggle`, {});
+toggleLike(productoId: number,token: any): Observable<any[]> {
+
+  const headers = new HttpHeaders({
+    'Authorization': `Bearer ${token}`
+  });
+  return this.http.post<any>(`http://localhost:8080/api/likes/${productoId}/toggle`, {},{ headers });
+
 }
 obtenerLikesUsuario(): Observable<{producto: Producto}[]> {
   return this.http.get<{producto: Producto}[]>('http://localhost:8080/api/likes');

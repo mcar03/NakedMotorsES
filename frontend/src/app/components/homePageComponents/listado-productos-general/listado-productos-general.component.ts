@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, Injectable } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { CarritoService } from 'src/app/services/carrito-service.service';
 import { ServiProductoService } from 'src/app/services/servi-producto.service';
@@ -31,18 +32,39 @@ export class ListadoProductosGeneralComponent {
   productos: Producto[] = [];
   paginaActual = 1;
   productosPorPagina = 5;
+  isLogin: boolean = false;
+  roleUser: string = ''
 
- constructor(private productoService: ServiProductoService,private carritoService: CarritoService,private snackBar: MatSnackBar) {}
+  constructor(
+    private productoService: ServiProductoService,
+    private carritoService: CarritoService,
+    private snackBar: MatSnackBar,
+    private router: Router
+  ) {
+      if(localStorage.getItem('token')){
+        this.isLogin = true
+      }
+      if(localStorage.getItem('roles')){
+        this.roleUser = localStorage.getItem('roles')!;
+      }
+  }
    
+   canLikeProduct():void {
+     if(!this.isLogin){
+       this.router.navigate(["/login"]);
+       return;
+     }
+   }
      
- 
    annadirAlCarrito(producto: any) {
+    this.canLikeProduct();
      this.carritoService.añadirProducto({
        nombre: producto.nombre,
        precio: producto.precio,
+         id: producto.id,
        imagenurl: producto.imagenurl,
        cantidad: 1
-     });
+     },localStorage.getItem('token'));
      this.snackBar.open(`${producto.nombre} añadido al carrito`, 'Cerrar', {
        duration: 2500,
        panelClass: ['snackbar-success']
@@ -69,6 +91,7 @@ export class ListadoProductosGeneralComponent {
   }
 
   toggleLike(producto: Producto): void {
+    this.canLikeProduct();
     producto.liked = !producto.liked;
   }
 }

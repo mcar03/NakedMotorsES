@@ -13,17 +13,25 @@ export class CarritoPageComponent implements OnInit {
   constructor(private carritoService: CarritoService) {}
 
   ngOnInit() {
-    this.carritoService.productos$.subscribe(data => {
-      this.productos = data;
-    });
+    this.carritoService.getProductosCarrito(localStorage.getItem('token')).subscribe({
+      next: (data) => {
+        console.log('DATA ' ,data);
+        this.productos = data;
+      }
+    })
+    // this.carritoService.productos$.subscribe(data => {
+    //   this.productos = data;
+    // });
   }
 
   get total(): number {
     return this.carritoService.getTotal();
   }
 
-  eliminarProducto(index: number) {
-    this.carritoService.eliminarProducto(index);
+  eliminarProducto(index: any) {
+    console.log(index)
+    this.carritoService.eliminarProducto(index,localStorage.getItem('token'));
+
   }
 
   vaciarCarrito() {
@@ -33,6 +41,16 @@ export class CarritoPageComponent implements OnInit {
   actualizarTotal() {
     // Forzar detección de cambios o simplemente recargar los productos
     this.productos = [...this.productos];
+  }
+  comprarProducto(){
+    const totalUnidades = this.productos.reduce((total, producto) => {
+        this.carritoService.eliminarStock(producto.id!,localStorage.getItem('token'),producto.cantidad);
+      return total + (producto.cantidad || 0);
+    }, 0);
+
+    console.log('Total de unidades compradas:', totalUnidades);
+    console.log('Productos:', this.productos);
+
   }
 
   

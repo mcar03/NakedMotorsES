@@ -70,7 +70,7 @@
         La contraseña debe tener al menos 6 caracteres.
       </div>
   
-      <button type="submit" [disabled]="!registerForm.valid">Registrarse</button>
+      <button type="submit" [disabled]="!registerForm.valid" (click)="onRegister()">Registrarse</button>
     </form>
   
     <p class="login-text">

@@ -8,11 +8,23 @@ import { Observable, tap } from 'rxjs';
 })
 export class AuthService {
 private loginUrl = "http://localhost:8080/auth/login";
+private registerUrl = "http://localhost:8080/auth/register";
 private tokenKey = "authToken"
   constructor(private http: HttpClient, private router: Router) { }
 
   login(username:string, password:string ):Observable<any>{
     return this.http.post<any>(this.loginUrl, {username, password}).pipe(
+      tap(response => {
+        if(response.token){
+          this.setToken(response.token);
+          console.log(response.token)
+        }
+      })
+    )
+  }
+  
+  register(body: any):Observable<any>{
+    return this.http.post<any>(this.registerUrl, body).pipe(
       tap(response => {
         if(response.token){
           this.setToken(response.token);

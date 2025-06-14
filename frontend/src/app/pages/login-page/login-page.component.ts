@@ -13,11 +13,18 @@ export class LoginPageComponent {
   username: string = '';
   password: string = '';
 
+
   constructor(private authService: AuthService,private router: Router){}
 
   login():void{
     this.authService.login(this.username, this.password).subscribe({
-      next:() => this.router.navigate(["/"]),
+      next:(dataLogin) => {
+        localStorage.setItem('token', dataLogin.jwtToken);
+        localStorage.setItem('roles', dataLogin.roles);
+
+        this.router.navigate(["/"]);
+        window.location.reload();
+      },
       error: (err) => console.error("Login failed", err)
     })
   }

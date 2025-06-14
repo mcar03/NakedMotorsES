@@ -4,12 +4,12 @@
 
     <div class="menu-container">
       <ul nz-menu nzTheme="dark" nzMode="horizontal" class="header-menu">
-        <li nz-menu-item [routerLink]="'/mis-likes'">Likes ❤️</li>
-        <li nz-menu-item [routerLink]="'/carrito'">
+        <li nz-menu-item [routerLink]="'/mis-likes'" (click)="canLikeProduct()">Likes ❤️</li>
+        <li nz-menu-item [routerLink]="'/carrito'" (click)="canLikeProduct()">
           <i class="pi pi-shopping-cart"></i>Carrito
         </li>
-        <li nz-menu-item [routerLink]="'/login'">Iniciar Sesión</li>
-        <li nz-menu-item (click)="logout()" >Logout</li>
+        <li nz-menu-item [routerLink]="'/login'" *ngIf="!isLogin">Iniciar Sesión</li>
+        <li nz-menu-item (click)="logout()" *ngIf="isLogin" >Logout</li>
 
       </ul>
     </div>

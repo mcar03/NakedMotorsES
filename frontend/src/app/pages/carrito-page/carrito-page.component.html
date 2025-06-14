@@ -16,14 +16,13 @@
             <input type="number" [(ngModel)]="producto.cantidad" min="1" (change)="actualizarTotal()" style="width: 60px;" />
           </label>
           <p>Subtotal: {{ producto.precio * producto.cantidad }} €</p>
-          <button (click)="eliminarProducto(i)">Eliminar</button>
+          <button (click)="eliminarProducto(producto.id)">Eliminar</button>
         </div>
       </div>
   
       <div class="resumen">
         <h3>Total: {{ total | number:'1.2-2'}} €</h3>
-        <button (click)="vaciarCarrito()">Vaciar Carrito</button>
-        <button class="btn-comprar" >Comprar</button>
+        <button class="btn-comprar" (click)="comprarProducto()" >Comprar</button>
       </div>
     </div>
   </div>

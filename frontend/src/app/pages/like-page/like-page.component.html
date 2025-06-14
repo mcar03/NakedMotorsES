@@ -1,12 +1,21 @@
-<!-- <div class="container">
-  <h2>Productos que te gustan ❤️</h2>
-  <div *ngIf="productosLiked.length === 0">
-    <p>No has guardado productos aún.</p>
+<div class="carrito-container">
+  <h2>FAVORITOS</h2>
+
+  <div *ngIf="productosLike.length === 0">
+    <p>Tu lista de favoritos está vacía.</p>
   </div>
-  <ul>
-    <li *ngFor="let producto of productosLiked">
-      <h3>{{ producto.nombre }} - ${{ producto.precio }}</h3>
-      <p>{{ producto.descripcion }}</p>
-    </li>
-  </ul>
-</div> -->
+
+  <div *ngIf="productosLike.length > 0" class="productos-lista">
+    <div *ngFor="let producto of productosLike" class="producto-item">
+      <img [src]="producto.imagenurl" [alt]="producto.nombre" />
+      <div class="info">
+        <h4>{{ producto.nombre }}</h4>
+        <p>{{ producto.descripcion }}</p>
+        <p><strong>Talla:</strong> {{ producto.talla }}</p>
+        <p><strong>Precio:</strong> {{ producto.precio }} €</p>
+        <p><strong>Categoría:</strong> {{ producto.categoriaNombre }}</p>
+      </div>
+      <button class="btn-comprar" (click)="annadirAlCarrito(producto)">Añadir al carrito</button>
+    </div>
+  </div>
+</div>

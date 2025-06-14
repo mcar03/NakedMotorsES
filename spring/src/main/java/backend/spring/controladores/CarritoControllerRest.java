@@ -75,6 +75,7 @@ public class CarritoControllerRest {
         linea.setCantidad(nuevaCantidad);
         linea.setPedido(carrito);
         linea.setPrecio(producto.getPrecio());
+        linea.setImagenurl(producto.getImagenurl());
 
         LineaPedido newPedido = repoLineaPedido.save(linea);
         return new LineaPedidoDTO(newPedido);

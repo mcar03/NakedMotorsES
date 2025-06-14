@@ -18,6 +18,7 @@ public class LineaPedido {
     private Long id;
     private Float precio;
     private Integer cantidad;
+    private String imagenurl;
     @ManyToOne
     private Producto producto;
     @ManyToOne

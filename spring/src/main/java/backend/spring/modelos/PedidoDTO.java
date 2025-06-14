@@ -26,8 +26,13 @@ public class PedidoDTO {
         this.total = pedido.getTotal();
         this.clienteId = pedido.getCliente().getId();
         this.estado = pedido.getEstado();
-        this.direccion = String.format("%s, %s",pedido.getDireccion().getNombre(), pedido.getDireccion().getNumero());
-        this.telefono = pedido.getTelefono().getNumero();
+        if (pedido.getDireccion() != null) {
+            this.direccion = String.format("%s, %s",pedido.getDireccion().getNombre(), pedido.getDireccion().getNumero());
+        }
+        if (pedido.getTelefono() != null) {
+            this.telefono = pedido.getTelefono().getNumero();
+        }
+            
     }
 
     public static List<PedidoDTO> toListDTO(List<Pedido> listPedido) {

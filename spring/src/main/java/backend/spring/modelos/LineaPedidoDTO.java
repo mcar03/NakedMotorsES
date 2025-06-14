@@ -15,6 +15,7 @@ public class LineaPedidoDTO {
     private int cantidad;
     private Float precio;
     private Long productoId;
+    private String imagenurl;
     private Long pedidoId;
 
     public LineaPedidoDTO(LineaPedido lp) {
@@ -23,6 +24,7 @@ public class LineaPedidoDTO {
         this.precio = lp.getPrecio();
         this.productoId = lp.getProducto().getId();
         this.pedidoId = lp.getPedido().getId();
+        this.imagenurl = lp.getImagenurl();
     }
 
     public static List<LineaPedidoDTO> toListDTO(List<LineaPedido> listLineaPedido) {
